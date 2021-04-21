@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 66.7%;
+}
+
+header{
+    padding: 1vw;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar-left{
+    width: 50%;
+}
+
+.home-link{
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    img{
+        width: 6vw;
+        height: 2.2vw;
+    }
+}
+
+.logo{
+    margin-left: 2vw;
+  margin-top: 0.9vw;
+}
+
+.logo-name{
+    margin-left: -1.5vw;
+    font-family: Playfair Display ;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2.8vw;
+    line-height: 10vh;
+}
+
+.navbar-right{
+    margin: auto;
+    font-family: inter;
+}
+
+.login{
+    margin-right: 1vw;
+    padding: 1vw;
+    font-size: 1.1vw;
+    text-decoration: none;
+    border: 1px solid  #FF5200;
+    border-radius: 8px;
+    color: #FF5200;
+    padding: auto 10rem;
+}
+
+.login:hover{
+    background-color: #FF5200;
+    color: white;
+}
+
+.nav-buttons{
+    margin-right: 1vw;
+    padding: 1vw;
+    font-size: 1.1vw;
+    text-decoration: none;
+    color: black;
+    
+}
+
+.section-1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 2vw;
+    font-size: 10rem;
+}
+.explore{
+    font-family: Playfair Display;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items: flex-start;
+    margin-left: 4vw;
+
+}
+
+.explore-search{
+    margin-right: 5vw;
+    display: flex;
+    
+    input{
+        background-color: #C4C4C4;
+        width: 100%;
+        font-size: 1.6vw;
+        border: none;
+        padding-left: 1vw;
+    }
+    button{
+        background-color: #C4C4C4;
+        border: none;
+        img{
+            height: 7vh;
+        }
+    }
+}
+
+.explore-button{
+    border-radius: 8px;
+    width: 12vw;
+    padding: 1vw;
+    font-size: 1.1vw;
+    border: none;
+    color: white;
+    font-weight: bold;
+    background-color: #FF5200;
+}
+
+.explore ,.illustration-1{
+    text-align: center;
+    width: 50%;
+    height: 80vh;   
+}
+
+.illustration-1{
+    img{
+        width: 90%;
+        height: 90%;
+    }
+}
+
