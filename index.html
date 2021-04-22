@@ -65,7 +65,7 @@
         console.log('will the service work register');
 
         navigator.serviceWorker.register('service-worker.js',{
-            scope : '/index/'
+            scope : 'index.html'
         })
         .then((reg) =>{
           console.log('yes it did');
