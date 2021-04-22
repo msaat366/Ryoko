@@ -1,7 +1,7 @@
 {
     "name": "Ryoko",
     "short_name": "Ryoko",
-    "start_url": "../index/index.html",
+    "start_url": "../index.html",
         "icons": [
             {
                 "src": "../Assets/favicon/android-icon-36x36.png",
