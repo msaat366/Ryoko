@@ -1,6 +1,7 @@
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
-  'index.html'
+  'index.html',
+  './Css/landingpage.css'
 ];
 
 self.addEventListener('install', function(event) {
@@ -14,7 +15,7 @@ self.addEventListener('install', function(event) {
   );
 });
 
-self.addEventListener('fetch', function(event) {
+/* self.addEventListener('fetch', function(event) {
     event.respondWith(
       caches.match(event.request)
         .then(function(response) {
@@ -46,4 +47,36 @@ self.addEventListener('fetch', function(event) {
           );
         })
       );
-  }); 
+}); */
+
+self.addEventListener('fetch', function (event) {
+  event.respondWith(
+    caches.open(CACHE_NAME).then(function (cache) {
+      return fetch(event.request).then(function (response) {
+        cache.put(event.request, response.clone());
+        return response;
+      });
+    })
+  );
+});
+
+self.addEventListener('activate', (event) => {
+  console.log('Activating new service worker...');
+
+  const cacheAllowlist = [CACHE_NAME];
+
+  event.waitUntil(
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cacheName) => {
+          if (cacheAllowlist.indexOf(cacheName) === -1) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
+  );
+});
+
+
+var CACHE_NAME = 'my-site-cache-v2';
