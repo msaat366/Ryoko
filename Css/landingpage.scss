@@ -513,7 +513,7 @@ footer{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2vw;
+    padding: 0vw;
     form{
         text-align: center;
         input{
@@ -582,4 +582,10 @@ footer{
 .or{
     padding-top: 3rem;
     font-size: 2.5rem;
+}
+
+.hl-name{
+    text-align: center;
+    font-size: 5.6rem;
+    text-decoration: underline 0.8rem  #523160;
 }

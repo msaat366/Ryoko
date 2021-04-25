@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Css/landingpage.css">
+     <meta name="google-signin-client_id" content="455242263405-tn6cfc6mbba8j0moligi50ftsupj37gl.apps.googleusercontent.com">
     <title>Login Register</title>
 </head>
 <body>
@@ -24,19 +25,20 @@
                 <div class="flex">
                     <form action="" class="register" id="register">
                         <input type="email" name="email" placeholder="Email" id="email">
-                        <input type="password" name="password" placeholder="Password" id="password">
-                        <input type="password" name="confirm-password" placeholder="Confirm Password" id="password-c">
+                        <input type="password" name="password" placeholder="Password" id="password" autocomplete="">
+                        <input type="password" name="confirm-password" placeholder="Confirm Password" id="password-c" autocomplete="">
                         <input type="submit" value="Sign up" class="btn-sign" style="background-color: #2D9CDB; color: white;">
                     </form>
                     <form action="" class="login-s" id="login-s">
                         <input type="email" name="email" placeholder="Email">
-                        <input type="password" name="password" id="password-l" placeholder="Password">
+                        <input type="password" name="password" id="password-l" placeholder="Password" autocomplete="">
                         <input type="submit" value="Sign in" class="btn-sign" style="background-color: #2D9CDB; color: white;">
                     </form>
                 </div>
                 <p class="or">OR</p>
-                <div class="fb-login-button" data-width="1" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="true" data-use-continue-as="true"></div>
-                
+                <div class="fb-login-button" data-width="250px" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="true" data-use-continue-as="true"></div>
+                <div id="my-signin2"></div>
+                <a href="#" onclick="signOut();">Sign out</a>
         </div>
     </div>
     <div id="fb-root"></div>
@@ -53,6 +55,32 @@
             document.getElementById('register').style.visibility = 'visible';
             document.getElementById('login-s').style.visibility = 'hidden';
         }
+
+        function onSuccess(googleUser) {
+      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+    }
+    function onFailure(error) {
+      console.log(error);
+    }
+    function renderButton() {
+      gapi.signin2.render('my-signin2', {
+        'scope': 'profile email',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+      });
+    }
+
+    function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
     </script>
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 </body>
 </html>
