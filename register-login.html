@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Css/landingpage.css">
+    <title>Login Register</title>
+</head>
+<body>
+    <div class="register-login-page">
+        <div class="login-illustration"><img src="./Assets/Landing Page/register-login.svg" alt=""></div>
+        <div class="register-login-section">
+            <a href="" class="home-link">
+                    <img src="./Assets/Landing Page/Travel.png" alt="" class="logo">
+                    <p class="logo-name">Ryoko</p>
+                </a>
+                <div class="b-flex">
+                    <div class="toogle" id="toogle">
+                    </div>
+                        <div class="btn-up" onclick="register()">Sign up</div>
+                        <div class="btn-in" onclick="login()">Sign-in</div>
+                </div>
+                <div class="flex">
+                    <form action="" class="register" id="register">
+                        <input type="email" name="email" placeholder="Email" id="email">
+                        <input type="password" name="password" placeholder="Password" id="password">
+                        <input type="password" name="confirm-password" placeholder="Confirm Password" id="password-c">
+                        <input type="submit" value="Sign up" class="btn-sign" style="background-color: #2D9CDB; color: white;">
+                    </form>
+                    <form action="" class="login-s" id="login-s">
+                        <input type="email" name="email" placeholder="Email">
+                        <input type="password" name="password" id="password-l" placeholder="Password">
+                        <input type="submit" value="Sign in" class="btn-sign" style="background-color: #2D9CDB; color: white;">
+                    </form>
+                </div>
+                <p class="or">OR</p>
+                <div class="fb-login-button" data-width="1" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="true" data-use-continue-as="true"></div>
+                
+        </div>
+    </div>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v10.0" nonce="H5bgL1La"></script>
+    <script>
+        
+        function login(){
+            document.getElementById('toogle').style.transform = 'translateX(100%)';
+            document.getElementById('login-s').style.visibility = 'visible';
+            document.getElementById('register').style.visibility = 'hidden';
+        }
+        function register(){
+            document.getElementById('toogle').style.transform = 'translateX(0%)';
+            document.getElementById('register').style.visibility = 'visible';
+            document.getElementById('login-s').style.visibility = 'hidden';
+        }
+    </script>
+</body>
+</html>
