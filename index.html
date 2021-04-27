@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="full-screen" content="yes">
+    <meta name="google-signin-client_id" content="455242263405-tn6cfc6mbba8j0moligi50ftsupj37gl.apps.googleusercontent.com">
     <link rel="apple-touch-icon" sizes="57x57" href="./Assets/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="./Assets/favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="./Assets/favicon/apple-icon-72x72.png">
@@ -26,8 +27,45 @@
     <link rel="stylesheet" href="./Css/landingpage.css">
     <title>Ryoko</title>
 </head>
-
-<body>
+<body> <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0&appId=4356974737647429&autoLogAppEvents=1" nonce="4GX1aFCl"></script>  
+    <div id="r_l_modal" class="modal">
+        <span>&times;</span>
+        <div class="register-login-page">
+            <div class="login-illustration"><img src="./Assets/Landing Page/register-login.svg" alt=""></div>
+            <div class="register-login-section">
+                <span class="close" id="close">&times;</span>
+                <a href="" class="home-link">
+                        <img src="./Assets/Landing Page/Travel.png" alt="" class="logo">
+                        <p class="logo-name">Ryoko</p>
+                    </a>
+                    <div class="b-flex">
+                        <div class="toogle" id="toogle">
+                        </div>
+                            <div class="btn-up" onclick="register()">Sign up</div>
+                            <div class="btn-in" onclick="login()">Sign-in</div>
+                    </div>
+                    <div class="flex">
+                        <form action="" class="register" id="register">
+                            <input type="email" name="email" placeholder="Email" id="email" required>
+                            <input type="password" name="password" minlength="6" placeholder="Password" id="password" autocomplete="" required>
+                            <input type="password" name="confirm-password" minlength="6" placeholder="Confirm Password" id="passwordc"  autocomplete="" required>
+                            <input type="submit" value="Sign up" id="signup" style="background-color: #2D9CDB; color: white; cursor: pointer;">
+                        </form>
+                        <form action="" class="login-s" id="login-s">
+                            <input type="email" name="email" placeholder="Email" id="email-l" required>
+                            <input type="password" name="password" id="password-l" placeholder="Password" autocomplete="" required>
+                            <input type="submit" value="Sign in" id="signin" style="background-color: #2D9CDB; color: white; cursor: pointer;">
+                        </form>
+                    </div>
+                    <p class="or" id="log" style="cursor: pointer;">Sign Out</p>
+                    <p class="or">OR</p>
+                    <div id="my-signin2"></div>
+                    <p onclick="signOut();">Sign out</p>
+                    <div class="fb-login-button" scope="public_profile,email" onlogin="checkLoginState();" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="true" data-use-continue-as="true"></div>
+            </div>
+        </div>
+    </div>
     <header>
         <nav class="navbar">
             <div class="navbar-left">
@@ -41,7 +79,8 @@
                 <a href="./featured-destination.html" class="nav-buttons">Destination</a>
                 <a href="" class="nav-buttons">About</a>
                 <a href="" class="nav-buttons">Blogs</a>
-                <a href="./register-login.html" class="login ">Register/Login</a>
+                <a class="login" id='r_l'>Register/Login</a>
+                
             </div>
         </nav>
     </header>
@@ -198,7 +237,7 @@
             </div>
         </div>
     </footer>
-    <script>
+<script>
         if ('serviceWorker' in navigator) {
             console.log('will the service work register');
 
@@ -209,7 +248,107 @@
                     console.log('no it didnt, this happened:', err);
                 });
         }
-    </script>
+</script>
+<script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+<script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyCyQSokkfJFaHd7LThmkGD0sfb_In5SoMM",
+            authDomain: "ryoko-b698a.firebaseapp.com",
+            projectId: "ryoko-b698a",
+            storageBucket: "ryoko-b698a.appspot.com",
+            messagingSenderId: "496402880793",
+            appId: "1:496402880793:web:04ab0dfc3d4bac32838d88",
+            measurementId: "G-CMW5BJ23WZ"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        
+        const auth  = firebase.auth();
+</script>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '4356974737647429',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v10.0'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+   function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
+    console.log('statusChangeCallback');
+    console.log(response);                   // The current login status of the person.
+    if (response.status === 'connected') {   // Logged into your webpage and Facebook.
+      testAPI();  
+    } else {                                 // Not logged into your webpage or we are unable to tell.
+      console.log("not logged in");
+    }
+  }
+
+   function checkLoginState(){ 
+     FB.login(function(response) {
+        console.log(response);
+     });
+     FB.getLoginStatus(function(response) {
+       statusChangeCallback(response);
+      });
+    }
+
+
+    function testAPI() {                      
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Successful login for: ' + response);
+    });
+  }
+</script>
+<script>
+        /* Sign in using Google */
+        function onSuccess(googleUser) {
+          console.log(googleUser);
+      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+    }
+    function onFailure(error) {
+      console.log(error);
+    }
+    function renderButton() {
+      gapi.signin2.render('my-signin2', {
+        'scope': 'profile email',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+      });
+    }
+
+    function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+  /* Sign in using Google */
+</script>
+    
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+<script src="./JS/index.js"></script>
+    
 </body>
 
 </html>

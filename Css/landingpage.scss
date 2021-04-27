@@ -18,7 +18,7 @@ header{
     flex-direction: row;
     position: fixed;
     width: 100%;
-    z-index: 999;
+    z-index: 9;
 }
 
 .navbar-left{
@@ -510,6 +510,7 @@ footer{
 }
 
 .register-login-section{
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -588,4 +589,36 @@ footer{
     text-align: center;
     font-size: 5.6rem;
     text-decoration: underline 0.8rem  #523160;
+}
+
+
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(255, 255, 255); /* Fallback color */
+  background-color: rgb(255, 255, 255); /* Black w/ opacity */
+  z-index: 99;
+}
+
+.close {
+    position: absolute;
+    color: #aaa;
+    float: right;
+    font-size: 3.5rem;
+    font-weight: bold;
+    right: 5%;
+    top: 2%;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
