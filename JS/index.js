@@ -3,6 +3,9 @@ const modal = document.getElementById('r_l_modal')
 const close_modal = document.getElementById('close');
 const account = document.getElementById('acc');
 const email_name = document.getElementById('email-name');
+const g_profile = document.getElementById('g-profile')
+const g_img = document.querySelector('.g-profile img')
+const g_info = document.getElementById('g-info'); 
 
 r_l_btn.addEventListener('click', () => {
 
@@ -17,7 +20,7 @@ close_modal.addEventListener('click', () => {
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     email_name.innerHTML = `${user.email}`;
-    r_l_btn.style.display = 'inline-block';
+    r_l_btn.style.display = 'none';
     account.style.display = 'inline-block';
     console.log(user);
   } else {
@@ -26,6 +29,7 @@ firebase.auth().onAuthStateChanged((user) => {
     console.log('User is not logged in');
   }
 });
+
 const signup = document.getElementById('register');
   signup.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -48,8 +52,8 @@ const signup = document.getElementById('register');
 });
 
 const logout = document.getElementById('log-out');
-logout.addEventListener('click', (e) => {
-    e.preventDefault();
+logout.addEventListener('click', () => {
+    /* e.preventDefault(); */
     firebase.auth().signOut();
 });
 

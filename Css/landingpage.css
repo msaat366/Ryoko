@@ -61,6 +61,9 @@ header {
 }
 
 .navbar-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   margin: auto;
   font-family: inter;
 }
@@ -871,5 +874,39 @@ footer {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.g-profile {
+  display: inline-block;
+  position: relative;
+}
+
+.g-profile img {
+  border-radius: 50%;
+  width: 50%;
+  -webkit-box-shadow: 0 1px 0 rgba(5, 5, 5, 0.15);
+          box-shadow: 0 1px 0 rgba(5, 5, 5, 0.15);
+}
+
+.g-profile #g-info {
+  border-radius: 6px;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  visibility: hidden;
+  margin-top: 0.5rem;
+  padding: 1rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  position: absolute;
+  background-color: #555;
+  color: white;
+  right: 50%;
+  -webkit-transition: visibility 0.5s;
+  transition: visibility 0.5s;
+}
+
+.g-profile:hover #g-info {
+  visibility: visible;
 }
 /*# sourceMappingURL=landingpage.css.map */

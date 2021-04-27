@@ -80,7 +80,8 @@
                 <a href="" class="nav-buttons">About</a>
                 <a href="" class="nav-buttons">Blogs</a>
                 <a class="login" id='r_l'>Register/Login</a>
-                <a class="nav-buttons" id="acc">Account<div class="account">Logged in as: <br> <Span id="email-name">msaat366@gmail.com</Span><div class="log-out">Log out</div> </div></a>
+                <a class="nav-buttons" id="acc">Account<div class="account">Logged in as: <br> <Span id="email-name">msaat366@gmail.com</Span><div id="log-out">Log out</div> </div></a>
+                <a class="g-profile" id="g-profile"><img src="" alt="photo"><div id="g-info"></div></a>
             </div>
         </nav>
     </header>
@@ -316,8 +317,13 @@
 <script>
         /* Sign in using Google */
         function onSuccess(googleUser) {
-          console.log(googleUser);
-      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+            console.log(googleUser);
+            g_profile.display = 'inline-block';
+            r_l_btn.style.display = 'block';
+            modal.style.display = 'none';
+            g_img.src = `${googleUser.getBasicProfile().getImageUrl()}`;
+            g_info.innerHTML = `Google Account <br> ${googleUser.getBasicProfile().getName()} <br> ${googleUser.getBasicProfile().getEmail()} <button onclick="signOut()">log out</button>`     
+            console.log(g_profile.display);
     }
     function onFailure(error) {
       console.log(error);
@@ -337,14 +343,17 @@
     function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
+        g_profile.display = 'none';
+        g_info.display = 'none';
+        r_l_btn.style.display = 'block';
       console.log('User signed out.');
     });
   }
   /* Sign in using Google */
 </script>
     
-    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 <script src="./JS/index.js"></script>
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
     
 </body>
 
