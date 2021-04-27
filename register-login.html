@@ -9,7 +9,7 @@
     <title>Login Register</title>
 </head>
 <body>
-    <div class="register-login-page">
+     <div class="register-login-page">
         <div class="login-illustration"><img src="./Assets/Landing Page/register-login.svg" alt=""></div>
         <div class="register-login-section">
             <a href="" class="home-link">
@@ -37,36 +37,61 @@
                 </div>
                 <p class="or" id="log" style="cursor: pointer;">Sign Out</p>
                 <p class="or">OR</p>
-                <div class="fb-login-button" data-width="250px" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="true" data-use-continue-as="true"></div>
                 <div id="my-signin2"></div>
                 <p onclick="signOut();">Sign out</p>
+                <div class="fb-login-button" onlogin="checkLoginState();" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="true" data-use-continue-as="true"></div>
         </div>
     </div>
     <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v10.0" nonce="H5bgL1La"></script>
-    <script>
-        
-        function login(){
-            document.getElementById('toogle').style.transform = 'translateX(100%)';
-            document.getElementById('login-s').style.visibility = 'visible';
-            document.getElementById('register').style.visibility = 'hidden';
-        }
-        function register(){
-            document.getElementById('toogle').style.transform = 'translateX(0%)';
-            document.getElementById('register').style.visibility = 'visible';
-            document.getElementById('login-s').style.visibility = 'hidden';
-        }
-        
-        /* function run(){
-          const pass = document.getElementById('password').value;
-          const passc = document.getElementById('passwordc').value;
-          const signup = document.getElementById('signup');
-          
-          if(pass === passc){
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0&appId=4356974737647429&autoLogAppEvents=1" nonce="4GX1aFCl"></script>  
+ 
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '4356974737647429',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v10.0'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
 
-          }
-        }
- */
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+   function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
+    console.log('statusChangeCallback');
+    console.log(response);                   // The current login status of the person.
+    if (response.status === 'connected') {   // Logged into your webpage and Facebook.
+      testAPI();  
+    } else {                                 // Not logged into your webpage or we are unable to tell.
+      console.log("not logged in");
+    }
+  }
+
+   function checkLoginState(){
+     FB.getLoginStatus(function(response) {
+       statusChangeCallback(response);
+      });
+    }
+    checkLoginState();
+    function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Successful login for: ' + response);
+    });
+  }
+</script>
+
+    <script>
+        /* Sign in using Google */
         function onSuccess(googleUser) {
           console.log(googleUser);
       console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
@@ -92,7 +117,9 @@
       console.log('User signed out.');
     });
   }
+  /* Sign in using Google */
     </script>
+    
     <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 
         <!-- The core Firebase JS SDK is always required and must be listed first -->

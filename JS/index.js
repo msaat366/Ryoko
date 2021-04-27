@@ -52,3 +52,25 @@ signin.addEventListener('submit', (e) => {
     
     signin.reset();
 });
+
+ function login(){
+    document.getElementById('toogle').style.transform = 'translateX(100%)';
+    document.getElementById('login-s').style.visibility = 'visible';
+    document.getElementById('register').style.visibility = 'hidden';
+}
+function register(){
+    document.getElementById('toogle').style.transform = 'translateX(0%)';
+    document.getElementById('register').style.visibility = 'visible';
+    document.getElementById('login-s').style.visibility = 'hidden';
+}
+        
+        /* function run(){
+          const pass = document.getElementById('password').value;
+          const passc = document.getElementById('passwordc').value;
+          const signup = document.getElementById('signup');
+          
+          if(pass === passc){
+
+          }
+        }
+ */
