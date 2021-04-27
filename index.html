@@ -62,7 +62,7 @@
                     <p class="or">OR</p>
                     <div id="my-signin2"></div>
                     <p onclick="signOut();">Sign out</p>
-                    <div class="fb-login-button" scope="public_profile,email" onlogin="checkLoginState();" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="true" data-use-continue-as="true"></div>
+                    <div class="fb-login-button"  data-scope="public_profile,email" onlogin="checkLoginState();" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="true" data-use-continue-as="true"></div>
             </div>
         </div>
     </div>
@@ -80,7 +80,7 @@
                 <a href="" class="nav-buttons">About</a>
                 <a href="" class="nav-buttons">Blogs</a>
                 <a class="login" id='r_l'>Register/Login</a>
-                
+                <a class="nav-buttons" id="acc">Account<div class="account">Logged in as: <br> <Span id="email-name">msaat366@gmail.com</Span><div class="log-out">Log out</div> </div></a>
             </div>
         </nav>
     </header>
@@ -300,9 +300,6 @@
   }
 
    function checkLoginState(){ 
-     FB.login(function(response) {
-        console.log(response);
-     });
      FB.getLoginStatus(function(response) {
        statusChangeCallback(response);
       });

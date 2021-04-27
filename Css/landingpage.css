@@ -74,6 +74,7 @@ header {
   border-radius: 8px;
   color: #FF5200;
   padding: auto 10rem;
+  display: none;
 }
 
 .login:hover {
@@ -87,6 +88,7 @@ header {
   font-size: 1.1vw;
   text-decoration: none;
   color: black;
+  cursor: pointer;
 }
 
 .section-1 {
@@ -762,6 +764,52 @@ footer {
           text-decoration: underline 0.8rem  #523160;
 }
 
+#acc {
+  position: relative;
+  display: none;
+}
+
+#acc .account {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  visibility: hidden;
+  margin-top: 0.5rem;
+  padding: 1rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  position: absolute;
+  background-color: #555;
+  color: white;
+}
+
+#acc .account span {
+  font-size: 1.1rem;
+}
+
+#acc .account .log-out {
+  font-size: 1.5rem;
+}
+
+#acc .account .log-out:hover {
+  text-decoration: underline;
+}
+
+#acc .account::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 40%;
+  margin-left: 0px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #555 transparent;
+}
+
+#acc:hover .account {
+  visibility: visible;
+}
+
 .modal {
   display: none;
   /* Hidden by default */
@@ -780,6 +828,32 @@ footer {
   background-color: white;
   /* Black w/ opacity */
   z-index: 99;
+  -webkit-transition: display 0.5s;
+  transition: display 0.5s;
+  -webkit-animation: modalapp 0.3s ease-in;
+          animation: modalapp 0.3s ease-in;
+}
+
+@-webkit-keyframes modalapp {
+  from {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@keyframes modalapp {
+  from {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
 }
 
 .close {

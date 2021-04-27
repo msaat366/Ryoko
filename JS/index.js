@@ -1,6 +1,8 @@
 const r_l_btn = document.getElementById('r_l');
 const modal = document.getElementById('r_l_modal')
 const close_modal = document.getElementById('close');
+const account = document.getElementById('acc');
+const email_name = document.getElementById('email-name');
 
 r_l_btn.addEventListener('click', () => {
 
@@ -14,9 +16,13 @@ close_modal.addEventListener('click', () => {
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
-    /* r_l_btn.style.display = 'none'; */
+    email_name.innerHTML = `${user.email}`;
+    r_l_btn.style.display = 'inline-block';
+    account.style.display = 'inline-block';
     console.log(user);
   } else {
+    account.style.display = 'none';
+    r_l_btn.style.display = 'inline-block';
     console.log('User is not logged in');
   }
 });
@@ -41,7 +47,7 @@ const signup = document.getElementById('register');
     signup.reset();
 });
 
-const logout = document.getElementById('log');
+const logout = document.getElementById('log-out');
 logout.addEventListener('click', (e) => {
     e.preventDefault();
     firebase.auth().signOut();
@@ -60,6 +66,7 @@ signin.addEventListener('submit', (e) => {
         .then((userCredential) => {
           var user = userCredential.user;
           console.log(user);
+          modal.style.display = 'none';
         })
         .catch((error) => {
           var errorCode = error.code;
