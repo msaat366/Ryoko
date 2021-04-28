@@ -876,19 +876,19 @@ footer {
   cursor: pointer;
 }
 
-.g-profile {
-  display: inline-block;
+#g-profile {
+  display: none;
   position: relative;
 }
 
-.g-profile img {
+#g-profile img {
   border-radius: 50%;
   width: 50%;
   -webkit-box-shadow: 0 1px 0 rgba(5, 5, 5, 0.15);
           box-shadow: 0 1px 0 rgba(5, 5, 5, 0.15);
 }
 
-.g-profile #g-info {
+#g-profile #g-info {
   border-radius: 6px;
   font-size: 1.2rem;
   line-height: 2rem;
@@ -906,7 +906,11 @@ footer {
   transition: visibility 0.5s;
 }
 
-.g-profile:hover #g-info {
+#g-profile:hover #g-info {
   visibility: visible;
+}
+
+.fb-login-button {
+  margin-top: 1rem;
 }
 /*# sourceMappingURL=landingpage.css.map */

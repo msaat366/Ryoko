@@ -675,8 +675,8 @@ footer{
     cursor: pointer;
 }
 
-.g-profile{
-    display: inline-block;
+#g-profile{
+    display: none;
     position: relative;
     img{
         border-radius: 50%;
@@ -702,4 +702,8 @@ footer{
             visibility: visible;
         }
     }
+}
+
+.fb-login-button{
+    margin-top: 1rem;
 }

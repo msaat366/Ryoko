@@ -58,10 +58,8 @@
                             <input type="submit" value="Sign in" id="signin" style="background-color: #2D9CDB; color: white; cursor: pointer;">
                         </form>
                     </div>
-                    <p class="or" id="log" style="cursor: pointer;">Sign Out</p>
                     <p class="or">OR</p>
                     <div id="my-signin2"></div>
-                    <p onclick="signOut();">Sign out</p>
                     <div class="fb-login-button"  data-scope="public_profile,email" onlogin="checkLoginState();" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="true" data-use-continue-as="true"></div>
             </div>
         </div>
@@ -295,6 +293,7 @@
     console.log(response);                   // The current login status of the person.
     if (response.status === 'connected') {   // Logged into your webpage and Facebook.
       testAPI();  
+      r_l_btn.style.display = 'none'
     } else {                                 // Not logged into your webpage or we are unable to tell.
       console.log("not logged in");
     }
@@ -305,12 +304,14 @@
        statusChangeCallback(response);
       });
     }
-
+    checkLoginState();
 
     function testAPI() {                      
     console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
-      console.log('Successful login for: ' + response);
+    FB.api('/me','GET',{'fields':'name,email,picture'} , function(response) {
+      console.log('Successful login for: ' + response.picture.data.url);
+      modal.style.display = 'none'
+      r_l_btn.style.display = 'none'
     });
   }
 </script>
@@ -318,11 +319,11 @@
         /* Sign in using Google */
         function onSuccess(googleUser) {
             console.log(googleUser);
-            g_profile.display = 'inline-block';
-            r_l_btn.style.display = 'block';
+            g_profile.style.display = 'inline-block';
+            r_l_btn.style.display = 'none';
             modal.style.display = 'none';
             g_img.src = `${googleUser.getBasicProfile().getImageUrl()}`;
-            g_info.innerHTML = `Google Account <br> ${googleUser.getBasicProfile().getName()} <br> ${googleUser.getBasicProfile().getEmail()} <button onclick="signOut()">log out</button>`     
+            g_info.innerHTML = `Google Account <br> ${googleUser.getBasicProfile().getName()} <br> ${googleUser.getBasicProfile().getEmail()}<br> <button onclick="signOut()">log out</button>`     
             console.log(g_profile.display);
     }
     function onFailure(error) {
@@ -335,7 +336,7 @@
         'height': 50,
         'longtitle': true,
         'theme': 'dark',
-        'onsuccess': onSuccess,
+        'onsuccess': onSuccess, 
         'onfailure': onFailure
       });
     }
@@ -343,8 +344,9 @@
     function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
-        g_profile.display = 'none';
-        g_info.display = 'none';
+         /* g_img.display = 'none'; */
+         g_profile.style.display = 'none';
+       /*  g_info.display = 'none'; */
         r_l_btn.style.display = 'block';
       console.log('User signed out.');
     });
