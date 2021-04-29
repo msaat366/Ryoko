@@ -60,7 +60,7 @@
                     </div>
                     <p class="or">OR</p>
                     <div id="my-signin2"></div>
-                    <div class="fb-login-button"  data-scope="public_profile,email" onlogin="checkLoginState();" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="true" data-use-continue-as="true"></div>
+                    <div class="fb-login-button"  data-scope="public_profile,email" onlogin="checkLoginState();" data-width="" data-size="large" data-button-type="continue_with" data-layout="default"></div>
             </div>
         </div>
     </div>
@@ -267,6 +267,7 @@
         
         const auth  = firebase.auth();
 </script>
+<script src="./JS/index.js"></script>
 <script>
   window.fbAsyncInit = function() {
     FB.init({
@@ -289,13 +290,16 @@
    }(document, 'script', 'facebook-jssdk'));
 
    function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
-    console.log('statusChangeCallback');
-    console.log(response);                   // The current login status of the person.
+    console.log('statusChangeCallback');                   // The current login status of the person.
     if (response.status === 'connected') {   // Logged into your webpage and Facebook.
-      testAPI();  
-      r_l_btn.style.display = 'none'
+         g_profile.style.display = 'inline-block';
+        r_l_btn.style.display = 'none'
+        modal.style.display = 'none' 
+        testAPI();  
     } else {                                 // Not logged into your webpage or we are unable to tell.
-      console.log("not logged in");
+        g_profile.style.display = 'none';
+       /*  r_l_btn.style.display ='none'; */
+        console.log("not logged in");
     }
   }
 
@@ -306,12 +310,19 @@
     }
     checkLoginState();
 
+    function fblogout(){
+        FB.logout(function(response) {
+             g_profile.style.display = 'none';
+            r_l_btn.style.display = 'block'
+        });
+    }
+
     function testAPI() {                      
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me','GET',{'fields':'name,email,picture'} , function(response) {
-      console.log('Successful login for: ' + response.picture.data.url);
-      modal.style.display = 'none'
-      r_l_btn.style.display = 'none'
+        g_img.src = `${response.picture.data.url}`;
+        g_info.innerHTML = `Facebook Account <br> ${response.name} <br> ${response.email}<br> <button onclick="fblogout()">log out</button>`
+      console.log('Successful login for: ' + response.name);
     });
   }
 </script>
@@ -344,9 +355,7 @@
     function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
-         /* g_img.display = 'none'; */
-         g_profile.style.display = 'none';
-       /*  g_info.display = 'none'; */
+        g_profile.style.display = 'none';
         r_l_btn.style.display = 'block';
       console.log('User signed out.');
     });
@@ -354,8 +363,7 @@
   /* Sign in using Google */
 </script>
     
-<script src="./JS/index.js"></script>
-    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
     
 </body>
 

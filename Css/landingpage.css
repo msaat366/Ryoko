@@ -12,6 +12,9 @@
 
 header {
   padding: 1vw;
+  position: fixed;
+  width: 100%;
+  z-index: 9;
 }
 
 .navbar {
@@ -22,9 +25,6 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  position: fixed;
-  width: 100%;
-  z-index: 9;
 }
 
 .navbar-left {
@@ -879,6 +879,7 @@ footer {
 #g-profile {
   display: none;
   position: relative;
+  width: 100%;
 }
 
 #g-profile img {
