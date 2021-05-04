@@ -1,5 +1,5 @@
 body {
-    background: #000;
+    background: #232323;
 }
 
 h1 {
@@ -7,7 +7,7 @@ h1 {
     color: #dba627;
 }
 
-p {
+.left {
     font-size: 20px;
     color: #dba627;
     display: inline;
@@ -25,20 +25,6 @@ p {
     float: right;
 }
 
-/*.first-left {
-    font-size: 20px;
-    color: #dba627;
-    padding-top: 100px;
-    padding-left: 300px;
-}*/
-
-/*.first-right {
-    font-size: 20px;
-    color: #dba627;
-    padding-top: 5px;
-    padding-left: 400px;
-}*/
-
 .h2-center {
     color: aliceblue;
     text-align: center;
@@ -46,7 +32,7 @@ p {
 }
 
 .h2-left {
-    font-size: 22px;
+    font-size: 20px;
     display: inline-block;
     text-align: left;
 }
@@ -55,3 +41,57 @@ hr {
     width: 80%;
     border: 1px solid #dba627;
 }
+
+.container {
+    padding-top: 50px;
+    padding-left: 500px;
+}
+
+.box {
+    background: #373737;
+    text-align: center;
+    width: 45%;
+    height: 150px;
+}
+
+.container-text {
+    font-size: 15px;
+    color: aliceblue;
+} 
+
+.ourValue-left {
+    color: aliceblue;
+    padding-top: 30px;
+    padding-left: 300px;
+    float: left;
+}
+
+.ourValue-right {
+    color: aliceblue;
+    padding-top: 30px;
+    padding-right: 350px;
+    float: right;
+}
+
+.ourValue-right h3 {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
