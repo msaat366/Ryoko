@@ -2,6 +2,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@font-face {
+  font-family: Acherus Militant;
+  src: url(../Assets/Fonts/acherus_militant_1_-_bold.otf.otf);
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -610,9 +615,11 @@ footer {
   font-size: 3.2rem;
   font-family: Playfair Display;
   font-weight: bolder;
+  padding-top: 1rem;
 }
 
 .featured-destination {
+  padding: 1rem;
   margin: 2vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -913,5 +920,121 @@ footer {
 
 .fb-login-button {
   margin-top: 1rem;
+}
+
+.About-page {
+  background-color: #232323;
+  font-family: Acherus Militant;
+  font-size: 5rem;
+  padding: 8rem 12rem;
+}
+
+.About-page hr {
+  border: 1px solid #DAA520;
+}
+
+.about-us h1 {
+  text-align: center;
+  font-size: 9rem;
+  letter-spacing: 0.3rem;
+  margin-bottom: 18rem;
+}
+
+.about-us .au-align {
+  color: #E4E0E0;
+  padding: 10rem 34rem;
+}
+
+.about-us .au-align p {
+  font-size: 3.4rem;
+  letter-spacing: 0.1rem;
+}
+
+.about-us .div-1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 4rem 0rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.about-us .div-1 p {
+  padding-left: 7rem;
+  font-size: 2.2rem;
+  line-height: 4rem;
+  letter-spacing: 0.1rem;
+}
+
+.about-us .div-1 p:nth-child(1) {
+  width: 38%;
+}
+
+.about-us .div-1 p:nth-child(2) {
+  width: 53%;
+}
+
+.au-color-1 {
+  color: #DAA520;
+}
+
+.our-story {
+  background-color: #373737;
+  -webkit-box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.25);
+  padding: 2rem;
+  margin: 20rem 13rem;
+  letter-spacing: 0.1rem;
+}
+
+.our-story h1 {
+  font-size: 7rem;
+  text-align: center;
+}
+
+.our-story p {
+  color: #E5E5E5;
+  line-height: 4rem;
+  font-weight: lighter;
+  padding: 3rem 1rem;
+}
+
+.our-values {
+  padding-top: 20rem;
+}
+
+.our-values h1 {
+  font-size: 7.2rem;
+  text-align: center;
+  padding-bottom: 10rem;
+}
+
+.our-values .values-4 {
+  padding: 5rem;
+  color: #E5E5E5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.our-values .values-4 .values-2 {
+  width: 38%;
+}
+
+.our-values .values-4 .values-2 .center-value {
+  text-align: center;
+}
+
+.our-values .values-4 .values-2 h2 {
+  font-size: 2.4rem;
+  padding-bottom: 2.5rem;
+}
+
+.our-values .values-4 .values-2 p {
+  font-size: 1.8rem;
 }
 /*# sourceMappingURL=landingpage.css.map */
