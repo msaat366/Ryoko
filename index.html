@@ -27,7 +27,8 @@
     <link rel="stylesheet" href="./Css/landingpage.css">
     <title>Ryoko</title>
 </head>
-<body> <div id="fb-root"></div>
+<body>  
+    <div id="fb-root"></div>
   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0&appId=4356974737647429&autoLogAppEvents=1" nonce="4GX1aFCl"></script>  
     <div id="r_l_modal" class="modal">
         <span>&times;</span>
@@ -76,19 +77,19 @@
                 <a href="./index.html" class="nav-buttons">Home</a>
                 <a href="./featured-destination.html" class="nav-buttons">Destination</a>
                 <a href="./about.html" class="nav-buttons">About</a>
-                <a href="" class="nav-buttons">Blogs</a>
+                <a href="#" class="nav-buttons">Blogs</a>
                 <a class="login" id='r_l'>Register/Login</a>
                 <a class="nav-buttons" id="acc">Account<div class="account">Logged in as: <br> <Span id="email-name">msaat366@gmail.com</Span><div id="log-out">Log out</div> </div></a>
                 <a class="g-profile" id="g-profile"><img src="" alt="photo"><div id="g-info"></div></a>
             </div>
         </nav>
     </header>
-    <main>
+    <main class="snap-line">
         <section class="section-1">
             <div class="explore">
                 <div class="explore-search">
-                    <input type="text" placeholder="Destination" value="" autofocus>
-                    <button type="submit"><img src="./Assets/Landing Page/Google Web Search.svg" alt="Search"></button>
+                    <input type="text" placeholder="Destination" value="" id="text-box" autofocus>
+                    <button type="submit" id="search-d"><img src="./Assets/Landing Page/Google Web Search.svg" alt="Search"></button>
                 </div>
                 <img src="./Assets/Landing Page/element2.svg" alt="" class="elem1">
                 <img src="./Assets/Landing Page/element3.svg" alt="" class="elem2">
@@ -227,7 +228,7 @@
             <div class="social">
                 <p>Get Social</p>
                 <div class="align">
-                    <img src="./Assets/Landing Page/twitter.svg" alt="">
+                   <a href="#"><img src="./Assets/Landing Page/twitter.svg" alt=""></a>
                     <img src="./Assets/Landing Page/facebook.svg" alt="">
                     <img src="./Assets/Landing Page/insta.svg" alt="">
                     <img src="./Assets/Landing Page/in.svg" alt="">
@@ -268,6 +269,7 @@
         const auth  = firebase.auth();
 </script>
 <script src="./JS/index.js"></script>
+<script src="./JS/test.js"></script>
 <script>
   window.fbAsyncInit = function() {
     FB.init({
@@ -364,7 +366,7 @@
 </script>
     
 <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
-    
+
 </body>
 
 </html>

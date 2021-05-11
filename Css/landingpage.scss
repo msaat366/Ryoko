@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
@@ -497,6 +497,7 @@ footer{
     align-content: space-between;
     a{
         display: flex;
+        flex-basis: 21%;
         flex-direction: column;
         align-items: center;
         padding: 0.5vw;
@@ -596,6 +597,77 @@ footer{
     text-align: center;
     font-size: 5.6rem;
     text-decoration: underline 0.8rem  #523160;
+}
+
+.brief{
+    font-family: Playfair Display;
+    font-weight: lighter;
+    padding: 2rem;
+    margin-top: 20rem;
+    margin-bottom: 15rem;
+    display: flex;
+    .brief-info{
+        padding: 1.5rem;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        h1{
+            font-size: 3.5rem;
+            text-align: center;
+            padding: 4rem;
+            font-weight: bold;
+            margin-top: -5rem;
+            margin-bottom: 9rem;
+        }
+        p{
+            font-size: 1.8rem;
+            font-weight: 590;
+            letter-spacing: -0.5px;
+            line-height: 4.3rem;
+        }
+    }
+    .brief-img{
+        padding-top: 2rem;
+    }
+}
+
+.info-visit{
+    display: inline-block;
+    font-size: 4rem;
+    border-bottom: 0.8rem solid #523160;
+}
+
+.poi-info{
+    margin: 10rem;
+    margin-top: 20rem;
+    display: flex;
+    justify-content: space-around;
+    .poi-text{
+        padding-top: 3rem;
+        font-size: 3.2rem;
+        line-height: 10rem;
+        h3{
+            font-size: 3.3rem;
+        }
+    }
+}   
+
+hr{
+    margin: 8rem;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.hungry-info{
+    text-align: center;
+    h1{
+        letter-spacing: -0.5px;
+        font-size: 4.2rem;
+        padding: 12rem;
+    }
+    .h-i-t{
+        display: flex;
+        justify-content: center;
+    }
 }
 
 #acc{

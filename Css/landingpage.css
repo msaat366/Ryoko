@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
@@ -637,6 +637,8 @@ footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-preferred-size: 21%;
+      flex-basis: 21%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -772,6 +774,94 @@ footer {
   font-size: 5.6rem;
   -webkit-text-decoration: underline 0.8rem  #523160;
           text-decoration: underline 0.8rem  #523160;
+}
+
+.brief {
+  font-family: Playfair Display;
+  font-weight: lighter;
+  padding: 2rem;
+  margin-top: 20rem;
+  margin-bottom: 15rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.brief .brief-info {
+  padding: 1.5rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.brief .brief-info h1 {
+  font-size: 3.5rem;
+  text-align: center;
+  padding: 4rem;
+  font-weight: bold;
+  margin-top: -5rem;
+  margin-bottom: 9rem;
+}
+
+.brief .brief-info p {
+  font-size: 1.8rem;
+  font-weight: 590;
+  letter-spacing: -0.5px;
+  line-height: 4.3rem;
+}
+
+.brief .brief-img {
+  padding-top: 2rem;
+}
+
+.info-visit {
+  display: inline-block;
+  font-size: 4rem;
+  border-bottom: 0.8rem solid #523160;
+}
+
+.poi-info {
+  margin: 10rem;
+  margin-top: 20rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.poi-info .poi-text {
+  padding-top: 3rem;
+  font-size: 3.2rem;
+  line-height: 10rem;
+}
+
+.poi-info .poi-text h3 {
+  font-size: 3.3rem;
+}
+
+hr {
+  margin: 8rem;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.hungry-info {
+  text-align: center;
+}
+
+.hungry-info h1 {
+  letter-spacing: -0.5px;
+  font-size: 4.2rem;
+  padding: 12rem;
+}
+
+.hungry-info .h-i-t {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 #acc {
