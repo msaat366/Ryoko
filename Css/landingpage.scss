@@ -18,6 +18,7 @@ header{
     position: fixed;
     width: 100%;
     z-index: 9;
+    background-color: white;
 }
 
 .navbar{
@@ -32,7 +33,7 @@ header{
 .home-link{
     text-decoration: none;
     color: black;
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     img{
         width: 3vw;
@@ -68,6 +69,7 @@ header{
     color: #FF5200;
     padding: auto 10rem;
     display: none;
+    cursor: pointer;
 }
 
 .login:hover{
@@ -159,8 +161,7 @@ header{
 
 .explore ,.illustration-1{
     text-align: center;
-    width: 50%;
-    height: 80vh;   
+    width: 50%; 
 }
 
 .illustration-1{
@@ -590,6 +591,7 @@ footer{
 
 .or{
     padding-top: 3rem;
+    padding-bottom: 3.5rem;
     font-size: 2.5rem;
 }
 
@@ -755,10 +757,9 @@ hr{
 #g-profile{
     display: none;
     position: relative;
-    width: 100%;
     img{
         border-radius: 50%;
-        width: 50%;
+        width: 4vw;
         box-shadow: 0 1px 0 rgba(5, 5, 5, 0.15);
     }
     #g-info{
@@ -778,6 +779,12 @@ hr{
     &:hover{
         #g-info{
             visibility: visible;
+            button{
+                cursor: pointer;
+                font-size: 1rem;
+                width: 5rem;
+                height: 1.8rem;
+            }
         }
     }
 }
@@ -879,4 +886,19 @@ hr{
             }
         }
     }
+}
+
+#modal_dest{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(255, 255, 255); /* Fallback color */
+  background-color: rgb(255, 255, 255); /* Black w/ opacity */
+  z-index: 99;
+  transition: display 0.5s;
+  animation: modalapp 0.7s ease-in;
 }

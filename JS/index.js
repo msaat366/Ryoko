@@ -44,6 +44,7 @@ const signup = document.getElementById('register');
       var user = userCredential.user;
     })
     .catch((error) => {
+      alert(error);
       var errorCode = error.code;
       var errorMessage = error.message;
       console(errorCode, errorMessage);
@@ -73,6 +74,7 @@ signin.addEventListener('submit', (e) => {
           modal.style.display = 'none';
         })
         .catch((error) => {
+          alert(error)
           var errorCode = error.code;
           var errorMessage = error.message;
           console.log(errorCode, errorMessage);

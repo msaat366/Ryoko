@@ -20,6 +20,7 @@ header {
   position: fixed;
   width: 100%;
   z-index: 9;
+  background-color: white;
 }
 
 .navbar {
@@ -39,9 +40,9 @@ header {
 .home-link {
   text-decoration: none;
   color: black;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -83,6 +84,7 @@ header {
   color: #FF5200;
   padding: auto 10rem;
   display: none;
+  cursor: pointer;
 }
 
 .login:hover {
@@ -199,7 +201,6 @@ header {
 .explore, .illustration-1 {
   text-align: center;
   width: 50%;
-  height: 80vh;
 }
 
 .illustration-1 img {
@@ -766,6 +767,7 @@ footer {
 
 .or {
   padding-top: 3rem;
+  padding-bottom: 3.5rem;
   font-size: 2.5rem;
 }
 
@@ -976,12 +978,11 @@ hr {
 #g-profile {
   display: none;
   position: relative;
-  width: 100%;
 }
 
 #g-profile img {
   border-radius: 50%;
-  width: 50%;
+  width: 4vw;
   -webkit-box-shadow: 0 1px 0 rgba(5, 5, 5, 0.15);
           box-shadow: 0 1px 0 rgba(5, 5, 5, 0.15);
 }
@@ -1006,6 +1007,13 @@ hr {
 
 #g-profile:hover #g-info {
   visibility: visible;
+}
+
+#g-profile:hover #g-info button {
+  cursor: pointer;
+  font-size: 1rem;
+  width: 5rem;
+  height: 1.8rem;
 }
 
 .fb-login-button {
@@ -1126,5 +1134,29 @@ hr {
 
 .our-values .values-4 .values-2 p {
   font-size: 1.8rem;
+}
+
+#modal_dest {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: white;
+  /* Fallback color */
+  background-color: white;
+  /* Black w/ opacity */
+  z-index: 99;
+  -webkit-transition: display 0.5s;
+  transition: display 0.5s;
+  -webkit-animation: modalapp 0.7s ease-in;
+          animation: modalapp 0.7s ease-in;
 }
 /*# sourceMappingURL=landingpage.css.map */
