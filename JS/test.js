@@ -23,7 +23,7 @@ function apiGet(method, query) {
   });
 }
 
-const pageLength = 5;
+const pageLength = 2      ;
 
 let offset = 0;
 let lon = 0;
@@ -76,15 +76,18 @@ document
   .addEventListener('click', function (event) {
     let name = document.getElementById('text-box').value;
     console.log(name);
-    window.open('../mumbai.html');
     apiGet('geoname', 'name=' + name).then(function (data) {
       console.log(data);
       let message = 'Name not found';
       if (data.status == 'OK' && data.country == 'IN') {
+        document.getElementById('modal_dest').style.display = 'block';
         message = data.name;
         lon = data.lon;
         lat = data.lat;
         firstLoad();
+      }
+      else {
+        alert("Sorry, but we can't seem to find this place");
       }
       /* document.getElementById('info').innerHTML = `<p>${message}</p>`; */
     });

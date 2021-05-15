@@ -17,6 +17,10 @@ close_modal.addEventListener('click', () => {
   modal.style.display = 'none';
 })
 
+document.getElementById('close_d').addEventListener('click', () => {
+  document.getElementById('modal_dest').style.display = 'none';
+})
+
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     email_name.innerHTML = `${user.email}`;
