@@ -779,40 +779,42 @@ footer {
 }
 
 .brief {
-  font-family: Playfair Display;
-  font-weight: lighter;
-  padding: 2rem;
+  margin: 10rem;
   margin-top: 20rem;
   margin-bottom: 15rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  /* font-family: Playfair Display;
+    font-weight: lighter;
+    padding: 2rem;
+    margin-top: 20rem;
+    margin-bottom: 15rem;
+    display: flex;
+    .brief-info{
+        padding: 1.5rem;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        h1{
+            font-size: 3.5rem;
+            text-align: center;
+            padding: 4rem;
+            font-weight: bold;
+            margin-top: -5rem;
+            margin-bottom: 9rem;
+        }
+        p{
+            font-size: 1.8rem;
+            font-weight: 590;
+            letter-spacing: -0.5px;
+            line-height: 4.3rem;
+        }
+    }
+    .brief-img{
+        padding-top: 2rem;
+    } */
 }
 
-.brief .brief-info {
-  padding: 1.5rem;
-  padding-right: 1rem;
-  padding-left: 1rem;
-}
-
-.brief .brief-info h1 {
-  font-size: 3.5rem;
-  text-align: center;
-  padding: 4rem;
-  font-weight: bold;
-  margin-top: -5rem;
-  margin-bottom: 9rem;
-}
-
-.brief .brief-info p {
-  font-size: 1.8rem;
-  font-weight: 590;
-  letter-spacing: -0.5px;
-  line-height: 4.3rem;
-}
-
-.brief .brief-img {
-  padding-top: 2rem;
+.brief iframe {
+  width: 100%;
+  height: 90vh;
 }
 
 .info-visit {

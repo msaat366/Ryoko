@@ -1,429 +1,759 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="full-screen" content="yes">
-    <meta name="google-signin-client_id" content="455242263405-tn6cfc6mbba8j0moligi50ftsupj37gl.apps.googleusercontent.com">
-    <link rel="apple-touch-icon" sizes="57x57" href="./Assets/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="./Assets/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="./Assets/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="./Assets/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="./Assets/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="./Assets/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="./Assets/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="./Assets/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="./Assets/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="./Assets/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./Assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="./Assets/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./Assets/favicon/favicon-16x16.png">
-    <link rel="manifest" href="./JS/site.webmanifest" crossorigin="use-credentials">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="../Assets/favicon/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="./Css/landingpage.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <meta name="full-screen" content="yes" />
+    <meta
+      name="google-signin-client_id"
+      content="455242263405-tn6cfc6mbba8j0moligi50ftsupj37gl.apps.googleusercontent.com"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./Assets/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./Assets/favicon/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./Assets/favicon/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./Assets/favicon/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="./Assets/favicon/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="./Assets/favicon/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="./Assets/favicon/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./Assets/favicon/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./Assets/favicon/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./Assets/favicon/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./Assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="./Assets/favicon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./Assets/favicon/favicon-16x16.png"
+    />
+    <link
+      rel="manifest"
+      href="./JS/site.webmanifest"
+      crossorigin="use-credentials"
+    />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="../Assets/favicon/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="stylesheet" href="./Css/landingpage.css" />
     <title>Ryoko</title>
-</head>
-<body>  
+  </head>
+  <body>
     <div id="fb-root"></div>
-  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0&appId=4356974737647429&autoLogAppEvents=1" nonce="4GX1aFCl"></script>  
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0&appId=4356974737647429&autoLogAppEvents=1"
+      nonce="4GX1aFCl"
+    ></script>
     <div id="r_l_modal" class="modal">
-        <span>&times;</span>
-        <div class="register-login-page">
-            <div class="login-illustration"><img src="./Assets/Landing Page/register-login.svg" alt=""></div>
-            <div class="register-login-section">
-                <span class="close" id="close">&times;</span>
-                <a href="" class="home-link">
-                        <img src="./Assets/Landing Page/Travel.png" alt="" class="logo">
-                        <p class="logo-name">Ryoko</p>
-                    </a>
-                    <div class="b-flex">
-                        <div class="toogle" id="toogle">
-                        </div>
-                            <div class="btn-up" onclick="register()">Sign up</div>
-                            <div class="btn-in" onclick="login()">Sign-in</div>
-                    </div>
-                    <div class="flex">
-                        <form action="" class="register" id="register">
-                            <input type="email" name="email" placeholder="Email" id="email" required>
-                            <input type="password" name="password" minlength="6" placeholder="Password" id="password" autocomplete="" required>
-                            <input type="password" name="confirm-password" minlength="6" placeholder="Confirm Password" id="passwordc"  autocomplete="" required>
-                            <input type="submit" value="Sign up" id="signup" style="background-color: #2D9CDB; color: white; cursor: pointer;">
-                        </form>
-                        <form action="" class="login-s" id="login-s">
-                            <input type="email" name="email" placeholder="Email" id="email-l" required>
-                            <input type="password" name="password" id="password-l" placeholder="Password" autocomplete="" required>
-                            <input type="submit" value="Sign in" id="signin" style="background-color: #2D9CDB; color: white; cursor: pointer;">
-                        </form>
-                    </div>
-                    <p class="or">OR</p>
-                    <div id="my-signin2"></div>
-                    <div class="fb-login-button"  data-scope="public_profile,email" onlogin="checkLoginState();" data-width="" data-size="large" data-button-type="continue_with" data-layout="default"></div>
-            </div>
+      <span>&times;</span>
+      <div class="register-login-page">
+        <div class="login-illustration">
+          <img
+            src="./Assets/Landing Page/register-login.svg"
+            alt=""
+          />
         </div>
+        <div class="register-login-section">
+          <span class="close" id="close">&times;</span>
+          <a href="" class="home-link">
+            <img
+              src="./Assets/Landing Page/Travel.png"
+              alt=""
+              class="logo"
+            />
+            <p class="logo-name">Ryoko</p>
+          </a>
+          <div class="b-flex">
+            <div class="toogle" id="toogle"></div>
+            <div class="btn-up" onclick="register()">Sign up</div>
+            <div class="btn-in" onclick="login()">Sign-in</div>
+          </div>
+          <div class="flex">
+            <form action="" class="register" id="register">
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                id="email"
+                required
+              />
+              <input
+                type="password"
+                name="password"
+                minlength="6"
+                placeholder="Password"
+                id="password"
+                autocomplete=""
+                required
+              />
+              <input
+                type="password"
+                name="confirm-password"
+                minlength="6"
+                placeholder="Confirm Password"
+                id="passwordc"
+                autocomplete=""
+                required
+              />
+              <input
+                type="submit"
+                value="Sign up"
+                id="signup"
+                style="
+                  background-color: #2d9cdb;
+                  color: white;
+                  cursor: pointer;
+                "
+              />
+            </form>
+            <form action="" class="login-s" id="login-s">
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                id="email-l"
+                required
+              />
+              <input
+                type="password"
+                name="password"
+                id="password-l"
+                placeholder="Password"
+                autocomplete=""
+                required
+              />
+              <input
+                type="submit"
+                value="Sign in"
+                id="signin"
+                style="
+                  background-color: #2d9cdb;
+                  color: white;
+                  cursor: pointer;
+                "
+              />
+            </form>
+          </div>
+          <p class="or">OR</p>
+          <div id="my-signin2"></div>
+          <div
+            class="fb-login-button"
+            data-scope="public_profile,email"
+            onlogin="checkLoginState();"
+            data-width=""
+            data-size="large"
+            data-button-type="continue_with"
+            data-layout="default"
+          ></div>
+        </div>
+      </div>
     </div>
     <section id="modal_dest">
-        <div class="header-mumbai">
-            <a href="" class="home-link">
-                <img src="./Assets/Landing Page/Travel.png" alt="" class="logo">
-                <p class="logo-name">Ryoko</p>
-            </a>
-            <span class="close" id="close_d">&times;</span>
-            <h1 class="hl-name">Mumbai</h1>
+      <div class="header-mumbai">
+        <a href="" class="home-link">
+          <img
+            src="./Assets/Landing Page/Travel.png"
+            alt=""
+            class="logo"
+          />
+          <p class="logo-name">Ryoko</p>
+        </a>
+        <span class="close" id="close_d">&times;</span>
+        <h1 class="hl-name">Mumbai</h1>
+      </div>
+      <section class="brief">
+        <!-- <div class="brief-info">
+          <h1>Mumbai in brief</h1>
+          <p>
+            Mumbai is also known as Bombay is the capital city of the
+            Indian state of Maharashtra. According to the United
+            Nations, as of 2018, Mumbai is the second-most populous
+            city in the country after Delhi and the seventh-most
+            populous city in the world with a population of roughly 20
+            million. <br />
+            &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+            &nbsp;&nbsp; Mumbai lies on the Konkan coast on the west
+            coast of India and has a deep natural harbour. In 2008,
+            Mumbai was named an alpha world city. It has the highest
+            number of millionaires and billionaires among all cities
+            in India. <br />
+            Mumbai is home to three UNESCO World Heritage Sites: the
+            Elephanta Caves, Chhatrapati Shivaji Maharaj Terminus, and
+            the city's distinctive ensemble of Victorian and Art Deco
+            buildings. The seven islands that constitute Mumbai were
+            originally home to communities of Marathi language
+            speaking Koli people. <br />
+            Mumbai is the financial, commercial, and the entertainment
+            capital of India. It is also one of the world's top ten
+            centres of commerce in terms of global financial flow, the
+            city is also home to Bollywood and Marathi cinema
+            industries. Mumbai's business opportunities attract
+            migrants from all over India.
+          </p>
+        </div>
+        <div class="brief-img">
+          <img src="./Assets/mumbai-brief.jpg" alt="" />
+        </div> -->
+        <iframe src="map.html"></iframe>
+      </section>
+      <section class="">
+        <div style="text-align: center">
+          <h3 class="info-visit">
+            Places to visit <img src="./Assets/plane.svg" alt="" />
+          </h3>
+        </div>
+        <div class="poi-info">
+          <div>
+            <img src="./Assets/mumbai-visit.jpg" alt="" id="poi-img-1" />
+            <div class="poi-text">
+              <h3>Gateway of India</h3>
+              <p>Location: Apollo Bandar, Colaba, Mumbai</p>
+              <p>Timings: 24×7; every day</p>
+              <p>Entry Fee: Free entry</p>
             </div>
-        <section class="brief">
-            <div class="brief-info">
-            <h1>Mumbai in brief</h1>
-            <p>Mumbai is also known as Bombay is the capital city of the Indian state of Maharashtra. According to the United Nations, as of 2018, Mumbai is the second-most populous city in the country after Delhi and the seventh-most populous city in the world with a population of roughly 20 million. 
-            <br>  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; Mumbai lies on the Konkan coast on the west coast of India and has a deep natural harbour. In 2008, Mumbai was named an alpha world city. It has the highest number of millionaires and billionaires among all cities in India. 
-            <br> Mumbai is home to three UNESCO World Heritage Sites: the Elephanta Caves, Chhatrapati Shivaji Maharaj Terminus, and the city's distinctive ensemble of Victorian and Art Deco buildings. The seven islands that constitute Mumbai were originally home to communities of Marathi language speaking Koli people. 
-            <br> Mumbai is the financial, commercial, and the entertainment capital of India. It is also one of the world's top ten centres of commerce in terms of global financial flow, the city is also home to Bollywood and Marathi cinema industries. Mumbai's business opportunities attract migrants from all over India.</p>
+          </div>
+          <div>
+            <img src="./Assets/mumbai-visit.jpg" alt="" id="poi-img-2" />
+            <div class="poi-text">
+              <h3>Red Carpet Wax Museum</h3>
+              <p>Location: Amrut Nagar, Ghatkopar West, Mumbai</p>
+              <p>Timings: 09:45 am to 09:30 pm; every day</p>
+              <p>Entry Fee</p>
             </div>
-            <div class="brief-img">
-                <img src="./Assets/mumbai-brief.jpg" alt="">
-            </div>
-        </section>
-        <section class=""> 
-            <div style="text-align: center;">
-                <h3 class="info-visit">Places to visit <img src="./Assets/plane.svg" alt=""></h3>
-            </div>
-            <div class="poi-info">
-                <div>
-                    <img src="./Assets/mumbai-visit.jpg" alt="">
-                    <div class="poi-text">
-                        <h3> Gateway of India</h3>
-                        <p>Location: Apollo Bandar, Colaba, Mumbai</p>
-                        <p>Timings: 24×7; every day</p>
-                        <p>Entry Fee: Free entry</p>
-                    </div>
-                </div>
-                <div>
-                    <img src="./Assets/mumbai-visit.jpg" alt="">
-                <div class="poi-text">
-                    <h3>Red Carpet Wax Museum</h3>
-                    <p>Location: Amrut Nagar, Ghatkopar West, Mumbai</p>
-                    <p>Timings: 09:45 am to 09:30 pm; every day</p>
-                    <p>Entry Fee</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-     <hr>   
-        <section class="hungry-info">
-            <h1>Hungry? we got you covered</h1>
-            <div class="h-i-t">
-                <img src="" alt="The Table">
-                <th>1.The Table</th>
-                <td>This romantic, bi-level, upscale eatery is a pioneer of Mumbai’s farm-to-table revolution,
-                adopting international culinary trends and applying them to a local context.</td>
-            </div>
-        </section> 
+          </div>
+        </div>
+      </section>
+      <hr />
+      <section class="hungry-info">
+        <h1>Hungry? we got you covered</h1>
+        <div class="h-i-t">
+          <img src="" alt="The Table" />
+          <th>1.The Table</th>
+          <td>
+            This romantic, bi-level, upscale eatery is a pioneer of
+            Mumbai’s farm-to-table revolution, adopting international
+            culinary trends and applying them to a local context.
+          </td>
+        </div>
+      </section>
     </section>
     <header>
-        <nav class="navbar">
-            <div class="navbar-left">
-                <a href="" class="home-link">
-                    <img src="./Assets/Landing Page/Travel.png" alt="" class="logo">
-                    <p class="logo-name">Ryoko</p>
-                </a>
-            </div>
-            <div class="navbar-right">
-                <a href="./index.html" class="nav-buttons">Home</a>
-                <a href="./featured-destination.html" class="nav-buttons">Destination</a>
-                <a href="./about.html" class="nav-buttons">About</a>
-                <a href="#" class="nav-buttons">Blogs</a>
-                <a class="login" id='r_l'>Register/Login</a>
-                <a class="nav-buttons" id="acc">Account<div class="account">Logged in as: <br> <Span id="email-name"></Span><div id="log-out">Log out</div> </div></a>
-                <a class="g-profile" id="g-profile"><img src="" alt="photo"><div id="g-info"></div></a>
-            </div>
-        </nav>
+      <nav class="navbar">
+        <div class="navbar-left">
+          <a href="" class="home-link">
+            <img
+              src="./Assets/Landing Page/Travel.png"
+              alt=""
+              class="logo"
+            />
+            <p class="logo-name">Ryoko</p>
+          </a>
+        </div>
+        <div class="navbar-right">
+          <a href="./index.html" class="nav-buttons">Home</a>
+          <a href="./featured-destination.html" class="nav-buttons"
+            >Destination</a
+          >
+          <a href="./about.html" class="nav-buttons">About</a>
+          <a href="#" class="nav-buttons">Blogs</a>
+          <a class="login" id="r_l">Register/Login</a>
+          <a class="nav-buttons" id="acc"
+            >Account
+            <div class="account">
+              Logged in as: <br />
+              <span id="email-name"></span>
+              <div id="log-out">Log out</div>
+            </div></a
+          >
+          <a class="g-profile" id="g-profile"
+            ><img src="" alt="photo" />
+            <div id="g-info"></div
+          ></a>
+        </div>
+      </nav>
     </header>
     <main class="snap-line">
-        <section class="section-1">
-            <div class="explore">
-                <div class="explore-search">
-                    <input type="text" placeholder="Destination" value="" id="text-box" autofocus>
-                    <button type="submit" id="search-d"><img src="./Assets/Landing Page/Google Web Search.svg" alt="Search"></button>
-                </div>
-                <img src="./Assets/Landing Page/element2.svg" alt="" class="elem1">
-                <img src="./Assets/Landing Page/element3.svg" alt="" class="elem2">
-                <img src="./Assets/Landing Page/element2.svg" alt="" class="elem3">
-                <h1 class="explore-Text" style="font-size: 4vw; text-align: left; width: 70%;">Explore and Travel</h1>
-                <a href="" class="explore-button">Explore</a>
-            </div>
-            <div class="illustration-1"><img src="./Assets/Landing Page/thousand-01 1.jpg" alt=""></div>
-        </section>
-        <section class="section-2">
-            <div class="featured-section">
-                <h2 class="featured-name">Featured destinations</h2>
-                <a href="./featured-destination.html" class="view-all">View all <img src="./Assets/Landing Page/view all.svg" alt=""></a>
-                <img src="./Assets/Landing Page/element2.svg" alt="" class="elem1-2">
-            </div>
-            <div class="featured-location">
-                <a href="./mumbai.html">
-                    <img class='location' src="./Assets/featured-destination/mumbai.jpg" alt="Mumbai">
-                    <p class="location-name">Mumbai</p>
-                </a>
-                <a href="">
-                    <img class="location" src="./Assets/featured-destination/Pune.jpg" alt="Pune">
-                    <p class="location-name">Pune</p>
-                </a>
-                <a href="">
-                    <img class="location" src="./Assets/featured-destination/konkan.jpg" alt="Konkan">
-                    <p class="location-name">Konkan</p>
-                </a>
-                <a href="">
-                    <img class="location" src="./Assets/featured-destination/Aurangabad.jpg" alt="Aurangabad">
-                    <p class="location-name">Aurangabad</p>
-                </a>
-            </div>
-            <img src="./Assets/Landing Page/element2.svg" alt="" class="elem2-2">
-        </section>
-        <section class="section-3">
-            <img src="./Assets/Landing Page/element3.svg" alt="" class="elem1-3">
-            <div class="section-about-us">
-                <div class="illustration-about-us">
-                    <img src="./Assets/Landing Page/Young boy going for world tour.svg" alt="">
-                </div>
-                <div class="text-about-us">
-                    <h2 class="heading">A new way to explore the world with us</h2>
-                    <p class="info">"It is through traveling that we learned that. On our journeys backpacking around
-                        the world, we've gotten into quite a few situations where I came to truly understand how lucky
-                        we should call ourselves for having those daily luxuries. Knowing and realizing that many people
-                        in the world are not fortunate enough to have them"</p>
-                    <img src="./Assets/Landing Page/element2.svg" alt="" class="elem2-3">
-                    <a href="" class="explore-button">About us</a>
-                </div>
-            </div>
-        </section>
-        <section class="section-4">
-            <div class="explore-info">
-                <img src="./Assets/Landing Page/element2.svg" alt="" class="elem1-4">
-                <h2 class="heading">Information of thousand
-                    website into one</h2>
-                <p class="info" style="color: #232324;">Our experts have collected information of best places from all
-                    over the Maharashtra so that you don’t have to </p>
-                <a href="" class="explore-button">Explore</a>
-            </div>
-            <img src="./Assets/Landing Page/element3.svg" alt="" class="elem2-4">
-            <div class="illustration-s4">
-                <img src="./Assets/Landing Page/Layer 1.svg" alt="">
-            </div>
-        </section>
-        <section class="section-5">
-            <h1 class="heading-s5">Gallery</h1>
-            <div class="gallery">
-                <img src="./Assets/Landing Page/Rectangle 1.jpg" alt="">
-                <div><img src="./Assets/Landing Page/2.svg" alt=""></div>
-                <img src="./Assets/Landing Page/Rectangle 2.jpg" alt="">
-                <div><img src="./Assets/Landing Page/4.svg" alt=""></div>
-                <div><img src="./Assets/Landing Page/1.svg" alt=""></div>
-                <img src="./Assets/Landing Page/Rectangle 3.jpg" alt="">
-                <div><img src="./Assets/Landing Page/3.svg" alt=""></div>
-                <img src="./Assets/Landing Page/Rectangle 4.jpg" alt="">
-            </div>
-        </section>
-        <section class="section-6">
-            <img src="./Assets/Landing Page/element3.svg" alt="" class="elem1-6">
-            <h1 class="heading-s6">Trending blogs for you</h1>
-            <div class="blog-info">
-                <div class="blog"><img src="./Assets/Landing Page/blog1.jpg" alt="">
-                    <h2 class="blog-h">The many benefits of  
-                        taking a holiday</h2>
-                    <p class="blog-p">The benefits of traveling are not just a one-time thing: traveling changes you physically and psychologically.</p>
-                    <a href=""class="read-more" >Read more</a>
-                </div>
-                <div class="blog"><img src="./Assets/Landing Page/bolg2.jpg" alt="">
-                    <h2 class="blog-h">50 THINGS TO PACK IN YOUR TRAVEL BACKPACK</h2>
-                    <p class="blog-p">Packing can be the bane of your life: but we’ve made the chore a little less tiresome for you and devised a COMPLETE packing list.</p>
-                    <a href="" class="read-more">Read more</a>
-                </div>
-                <div class="blog"><img src="./Assets/Landing Page/blog3.jpg" alt="">
-                    <h2 class="blog-h" > Exploring the best of India</h2>
-                    <p class="blog-p pp" >India is, without a doubt, the toughest country we’ve ever travelled through.</p>
-                    <a href="" class="read-more">Read more</a>
-                </div>
-                <div class="blog"><img src="./Assets/Landing Page/blog4.jpg" alt="">
-                    <h2 class="blog-h" >Water Sports in Konkan</h2>
-                    <p class="blog-p pp">The Konkan or ‘Konkan Coast’ is known to be a paradise for the fun and adventure lovers</p>
-                    <a href=""class="read-more" >Read more</a>
-                </div>
-            </div>
-            <img src="./Assets/Landing Page/element2.svg" alt="" class="elem3-6">
-        </section>
+      <section class="section-1">
+        <div class="explore">
+          <div class="explore-search">
+            <input
+              type="text"
+              placeholder="Destination"
+              value=""
+              id="text-box"
+              autofocus
+            />
+            <button type="submit" id="search-d">
+              <img
+                src="./Assets/Landing Page/Google Web Search.svg"
+                alt="Search"
+              />
+            </button>
+          </div>
+          <img
+            src="./Assets/Landing Page/element2.svg"
+            alt=""
+            class="elem1"
+          />
+          <img
+            src="./Assets/Landing Page/element3.svg"
+            alt=""
+            class="elem2"
+          />
+          <img
+            src="./Assets/Landing Page/element2.svg"
+            alt=""
+            class="elem3"
+          />
+          <h1
+            class="explore-Text"
+            style="font-size: 4vw; text-align: left; width: 70%"
+          >
+            Explore and Travel
+          </h1>
+          <a href="" class="explore-button">Explore</a>
+        </div>
+        <div class="illustration-1">
+          <img src="./Assets/Landing Page/thousand-01 1.jpg" alt="" />
+        </div>
+      </section>
+      <section class="section-2">
+        <div class="featured-section">
+          <h2 class="featured-name">Featured destinations</h2>
+          <a href="./featured-destination.html" class="view-all"
+            >View all
+            <img src="./Assets/Landing Page/view all.svg" alt=""
+          /></a>
+          <img
+            src="./Assets/Landing Page/element2.svg"
+            alt=""
+            class="elem1-2"
+          />
+        </div>
+        <div class="featured-location">
+          <a href="./mumbai.html">
+            <img
+              class="location"
+              src="./Assets/featured-destination/mumbai.jpg"
+              alt="Mumbai"
+            />
+            <p class="location-name">Mumbai</p>
+          </a>
+          <a href="">
+            <img
+              class="location"
+              src="./Assets/featured-destination/Pune.jpg"
+              alt="Pune"
+            />
+            <p class="location-name">Pune</p>
+          </a>
+          <a href="">
+            <img
+              class="location"
+              src="./Assets/featured-destination/konkan.jpg"
+              alt="Konkan"
+            />
+            <p class="location-name">Konkan</p>
+          </a>
+          <a href="">
+            <img
+              class="location"
+              src="./Assets/featured-destination/Aurangabad.jpg"
+              alt="Aurangabad"
+            />
+            <p class="location-name">Aurangabad</p>
+          </a>
+        </div>
+        <img
+          src="./Assets/Landing Page/element2.svg"
+          alt=""
+          class="elem2-2"
+        />
+      </section>
+      <section class="section-3">
+        <img
+          src="./Assets/Landing Page/element3.svg"
+          alt=""
+          class="elem1-3"
+        />
+        <div class="section-about-us">
+          <div class="illustration-about-us">
+            <img
+              src="./Assets/Landing Page/Young boy going for world tour.svg"
+              alt=""
+            />
+          </div>
+          <div class="text-about-us">
+            <h2 class="heading">
+              A new way to explore the world with us
+            </h2>
+            <p class="info">
+              "It is through traveling that we learned that. On our
+              journeys backpacking around the world, we've gotten into
+              quite a few situations where I came to truly understand
+              how lucky we should call ourselves for having those
+              daily luxuries. Knowing and realizing that many people
+              in the world are not fortunate enough to have them"
+            </p>
+            <img
+              src="./Assets/Landing Page/element2.svg"
+              alt=""
+              class="elem2-3"
+            />
+            <a href="" class="explore-button">About us</a>
+          </div>
+        </div>
+      </section>
+      <section class="section-4">
+        <div class="explore-info">
+          <img
+            src="./Assets/Landing Page/element2.svg"
+            alt=""
+            class="elem1-4"
+          />
+          <h2 class="heading">
+            Information of thousand website into one
+          </h2>
+          <p class="info" style="color: #232324">
+            Our experts have collected information of best places from
+            all over the Maharashtra so that you don’t have to
+          </p>
+          <a href="" class="explore-button">Explore</a>
+        </div>
+        <img
+          src="./Assets/Landing Page/element3.svg"
+          alt=""
+          class="elem2-4"
+        />
+        <div class="illustration-s4">
+          <img src="./Assets/Landing Page/Layer 1.svg" alt="" />
+        </div>
+      </section>
+      <section class="section-5">
+        <h1 class="heading-s5">Gallery</h1>
+        <div class="gallery">
+          <img src="./Assets/Landing Page/Rectangle 1.jpg" alt="" />
+          <div><img src="./Assets/Landing Page/2.svg" alt="" /></div>
+          <img src="./Assets/Landing Page/Rectangle 2.jpg" alt="" />
+          <div><img src="./Assets/Landing Page/4.svg" alt="" /></div>
+          <div><img src="./Assets/Landing Page/1.svg" alt="" /></div>
+          <img src="./Assets/Landing Page/Rectangle 3.jpg" alt="" />
+          <div><img src="./Assets/Landing Page/3.svg" alt="" /></div>
+          <img src="./Assets/Landing Page/Rectangle 4.jpg" alt="" />
+        </div>
+      </section>
+      <section class="section-6">
+        <img
+          src="./Assets/Landing Page/element3.svg"
+          alt=""
+          class="elem1-6"
+        />
+        <h1 class="heading-s6">Trending blogs for you</h1>
+        <div class="blog-info">
+          <div class="blog">
+            <img src="./Assets/Landing Page/blog1.jpg" alt="" />
+            <h2 class="blog-h">
+              The many benefits of taking a holiday
+            </h2>
+            <p class="blog-p">
+              The benefits of traveling are not just a one-time thing:
+              traveling changes you physically and psychologically.
+            </p>
+            <a href="" class="read-more">Read more</a>
+          </div>
+          <div class="blog">
+            <img src="./Assets/Landing Page/bolg2.jpg" alt="" />
+            <h2 class="blog-h">
+              50 THINGS TO PACK IN YOUR TRAVEL BACKPACK
+            </h2>
+            <p class="blog-p">
+              Packing can be the bane of your life: but we’ve made the
+              chore a little less tiresome for you and devised a
+              COMPLETE packing list.
+            </p>
+            <a href="" class="read-more">Read more</a>
+          </div>
+          <div class="blog">
+            <img src="./Assets/Landing Page/blog3.jpg" alt="" />
+            <h2 class="blog-h">Exploring the best of India</h2>
+            <p class="blog-p pp">
+              India is, without a doubt, the toughest country we’ve
+              ever travelled through.
+            </p>
+            <a href="" class="read-more">Read more</a>
+          </div>
+          <div class="blog">
+            <img src="./Assets/Landing Page/blog4.jpg" alt="" />
+            <h2 class="blog-h">Water Sports in Konkan</h2>
+            <p class="blog-p pp">
+              The Konkan or ‘Konkan Coast’ is known to be a paradise
+              for the fun and adventure lovers
+            </p>
+            <a href="" class="read-more">Read more</a>
+          </div>
+        </div>
+        <img
+          src="./Assets/Landing Page/element2.svg"
+          alt=""
+          class="elem3-6"
+        />
+      </section>
     </main>
     <footer>
-        <hr>
-        <div class="footer">
-            <div class="footer-info">
-                <a href="" class="home-link">
-                    <img src="./Assets/Landing Page/Travel.png" alt="" class="logo">
-                    <p class="logo-name">Ryoko</p>
-                </a>
-                <p class="footer-p">Plan your perfect trip with our
-                    expert advice, travel tips and destination
-                    information from us</p>
-                <p class="footer-p">@2021 Ryoko. All rights reseved</p>
-            </div>
-            <div class="footer-explore">
-                <p>Destination</p>
-                <a href="./mumbai.html">Mumbai</a>
-                <a href="">Pune</a>
-                <a href="">Aurangabad</a>
-                <a href="">Konkan</a>
-            </div>
-            <div class="footer-explore">
-                <p>Explore</p>
-                <a href="">Home</a>
-                <a href="">Destination</a>
-                <a href="">About</a>
-                <a href="">Blogs</a>
-            </div>
-            <div class="social">
-                <p>Get Social</p>
-                <div class="align">
-                   <a href="#"><img src="./Assets/Landing Page/twitter.svg" alt=""></a>
-                    <img src="./Assets/Landing Page/facebook.svg" alt="">
-                    <img src="./Assets/Landing Page/insta.svg" alt="">
-                    <img src="./Assets/Landing Page/in.svg" alt="">
-                    <img src="./Assets/Landing Page/YT.svg" alt="">
-                </div>
-            </div>
+      <hr />
+      <div class="footer">
+        <div class="footer-info">
+          <a href="" class="home-link">
+            <img
+              src="./Assets/Landing Page/Travel.png"
+              alt=""
+              class="logo"
+            />
+            <p class="logo-name">Ryoko</p>
+          </a>
+          <p class="footer-p">
+            Plan your perfect trip with our expert advice, travel tips
+            and destination information from us
+          </p>
+          <p class="footer-p">@2021 Ryoko. All rights reseved</p>
         </div>
+        <div class="footer-explore">
+          <p>Destination</p>
+          <a href="./mumbai.html">Mumbai</a>
+          <a href="">Pune</a>
+          <a href="">Aurangabad</a>
+          <a href="">Konkan</a>
+        </div>
+        <div class="footer-explore">
+          <p>Explore</p>
+          <a href="">Home</a>
+          <a href="">Destination</a>
+          <a href="">About</a>
+          <a href="">Blogs</a>
+        </div>
+        <div class="social">
+          <p>Get Social</p>
+          <div class="align">
+            <a href="#"
+              ><img src="./Assets/Landing Page/twitter.svg" alt=""
+            /></a>
+            <img src="./Assets/Landing Page/facebook.svg" alt="" />
+            <img src="./Assets/Landing Page/insta.svg" alt="" />
+            <img src="./Assets/Landing Page/in.svg" alt="" />
+            <img src="./Assets/Landing Page/YT.svg" alt="" />
+          </div>
+        </div>
+      </div>
     </footer>
-<script>
-        if ('serviceWorker' in navigator) {
-            console.log('will the service work register');
+    <script>
+      if ('serviceWorker' in navigator) {
+        console.log('will the service work register');
 
-            navigator.serviceWorker.register('service-worker.js')
-                .then((reg) => {
-                    console.log('yes it did');
-                }).catch((err) => {
-                    console.log('no it didnt, this happened:', err);
-                });
-        }
-</script>
-<script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-analytics.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
-<script>
-        var firebaseConfig = {
-            apiKey: "AIzaSyCyQSokkfJFaHd7LThmkGD0sfb_In5SoMM",
-            authDomain: "ryoko-b698a.firebaseapp.com",
-            projectId: "ryoko-b698a",
-            storageBucket: "ryoko-b698a.appspot.com",
-            messagingSenderId: "496402880793",
-            appId: "1:496402880793:web:04ab0dfc3d4bac32838d88",
-            measurementId: "G-CMW5BJ23WZ"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
-        
-        const auth  = firebase.auth();
-</script>
-<script src="./JS/index.js"></script>
-<script src="./JS/test.js"></script>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '4356974737647429',
-      cookie     : true,
-      xfbml      : true,
-      version    : 'v10.0'
-    });
-      
-    FB.AppEvents.logPageView();   
-      
-  };
+        navigator.serviceWorker
+          .register('service-worker.js')
+          .then((reg) => {
+            console.log('yes it did');
+          })
+          .catch((err) => {
+            console.log('no it didnt, this happened:', err);
+          });
+      }
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+    <script>
+      var firebaseConfig = {
+        apiKey: 'AIzaSyCyQSokkfJFaHd7LThmkGD0sfb_In5SoMM',
+        authDomain: 'ryoko-b698a.firebaseapp.com',
+        projectId: 'ryoko-b698a',
+        storageBucket: 'ryoko-b698a.appspot.com',
+        messagingSenderId: '496402880793',
+        appId: '1:496402880793:web:04ab0dfc3d4bac32838d88',
+        measurementId: 'G-CMW5BJ23WZ',
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-
-   function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
-    console.log('statusChangeCallback');                   // The current login status of the person.
-    if (response.status === 'connected') {   // Logged into your webpage and Facebook.
-         g_profile.style.display = 'inline-block';
-        r_l_btn.style.display = 'none'
-        modal.style.display = 'none' 
-        testAPI();  
-    } else {                                 // Not logged into your webpage or we are unable to tell.
-        g_profile.style.display = 'none';
-       /*  r_l_btn.style.display ='none'; */
-        console.log("not logged in");
-    }
-  }
-
-   function checkLoginState(){ 
-     FB.getLoginStatus(function(response) {
-       statusChangeCallback(response);
-      });
-    }
-    checkLoginState();
-
-    function fblogout(){
-        FB.logout(function(response) {
-             g_profile.style.display = 'none';
-            r_l_btn.style.display = 'block'
+      const auth = firebase.auth();
+    </script>
+    <script src="./JS/index.js"></script>
+    <script src="./JS/test.js"></script>
+    <script>
+      window.fbAsyncInit = function () {
+        FB.init({
+          appId: '4356974737647429',
+          cookie: true,
+          xfbml: true,
+          version: 'v10.0',
         });
-    }
 
-    function testAPI() {                      
-    console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me','GET',{'fields':'name,email,picture'} , function(response) {
-        g_img.src = `${response.picture.data.url}`;
-        g_info.innerHTML = `Facebook Account <br> ${response.name} <br> ${response.email}<br> <button onclick="fblogout()">log out</button>`
-      console.log('Successful login for: ' + response.name);
-    });
-  }
-</script>
-<script>
-        /* Sign in using Google */
-        function onSuccess(googleUser) {
-            console.log(googleUser);
-            g_profile.style.display = 'inline-block';
-            r_l_btn.style.display = 'none';
-            modal.style.display = 'none';
-            g_img.src = `${googleUser.getBasicProfile().getImageUrl()}`;
-            g_info.innerHTML = `Google Account <br> ${googleUser.getBasicProfile().getName()} <br> ${googleUser.getBasicProfile().getEmail()}<br> <button onclick="signOut()">log out</button>`     
-            console.log(g_profile.display);
-    }
-    function onFailure(error) {
-      console.log(error);
-    }
-    function renderButton() {
-      gapi.signin2.render('my-signin2', {
-        'scope': 'profile email',
-        'width': 240,
-        'height': 50,
-        'longtitle': true,
-        'theme': 'dark',
-        'onsuccess': onSuccess, 
-        'onfailure': onFailure
-      });
-    }
+        FB.AppEvents.logPageView();
+      };
 
-    function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-        g_profile.style.display = 'none';
-        r_l_btn.style.display = 'block';
-      console.log('User signed out.');
-    });
-  }
-  /* Sign in using Google */
-</script>
-    
-<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+      (function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+          return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      })(document, 'script', 'facebook-jssdk');
 
-</body>
+      function statusChangeCallback(response) {
+        // Called with the results from FB.getLoginStatus().
+        console.log('statusChangeCallback'); // The current login status of the person.
+        if (response.status === 'connected') {
+          // Logged into your webpage and Facebook.
+          g_profile.style.display = 'inline-block';
+          r_l_btn.style.display = 'none';
+          modal.style.display = 'none';
+          testAPI();
+        } else {
+          // Not logged into your webpage or we are unable to tell.
+          g_profile.style.display = 'none';
+          /*  r_l_btn.style.display ='none'; */
+          console.log('not logged in');
+        }
+      }
 
+      function checkLoginState() {
+        FB.getLoginStatus(function (response) {
+          statusChangeCallback(response);
+        });
+      }
+      checkLoginState();
+
+      function fblogout() {
+        FB.logout(function (response) {
+          g_profile.style.display = 'none';
+          r_l_btn.style.display = 'block';
+        });
+      }
+
+      function testAPI() {
+        console.log('Welcome!  Fetching your information.... ');
+        FB.api(
+          '/me',
+          'GET',
+          { fields: 'name,email,picture' },
+          function (response) {
+            g_img.src = `${response.picture.data.url}`;
+            g_info.innerHTML = `Facebook Account <br> ${response.name} <br> ${response.email}<br> <button onclick="fblogout()">log out</button>`;
+            console.log('Successful login for: ' + response.name);
+          }
+        );
+      }
+    </script>
+    <script>
+      /* Sign in using Google */
+      function onSuccess(googleUser) {
+        console.log(googleUser);
+        g_profile.style.display = 'inline-block';
+        r_l_btn.style.display = 'none';
+        modal.style.display = 'none';
+        g_img.src = `${googleUser.getBasicProfile().getImageUrl()}`;
+        g_info.innerHTML = `Google Account <br> ${googleUser
+          .getBasicProfile()
+          .getName()} <br> ${googleUser
+          .getBasicProfile()
+          .getEmail()}<br> <button onclick="signOut()">log out</button>`;
+        console.log(g_profile.display);
+      }
+      function onFailure(error) {
+        console.log(error);
+      }
+      function renderButton() {
+        gapi.signin2.render('my-signin2', {
+          scope: 'profile email',
+          width: 240,
+          height: 50,
+          longtitle: true,
+          theme: 'dark',
+          onsuccess: onSuccess,
+          onfailure: onFailure,
+        });
+      }
+
+      function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+          g_profile.style.display = 'none';
+          r_l_btn.style.display = 'block';
+          console.log('User signed out.');
+        });
+      }
+      /* Sign in using Google */
+    </script>
+
+    <script
+      src="https://apis.google.com/js/platform.js?onload=renderButton"
+      async
+      defer
+    ></script>
+  </body>
 </html>

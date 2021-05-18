@@ -3,19 +3,19 @@ const apiKey =
 
 function apiGet(method, query) {
   return new Promise(function (resolve, reject) {
-    var otmAPI =
+    var otmAPI =  
       'https://api.opentripmap.com/0.1/en/places/' +
       method +
       '?apikey=' +
       apiKey;
     if (query !== undefined) {
-      otmAPI += '&' + query;
+      otmAPI += '&' + query + '&country=IN';
     }
     fetch(otmAPI)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        resolve(data)
+        resolve(data);
       })
       .catch(function (err) {
         console.log('Fetch Error :-S', err);
@@ -23,7 +23,7 @@ function apiGet(method, query) {
   });
 }
 
-const pageLength = 2      ;
+const pageLength = 5;
 
 let offset = 0;
 let lon = 0;
@@ -31,7 +31,7 @@ let lat = 0;
 let count = 0;
 
 function onShowPOI(data) {
-  /* console.log(data); */
+  console.log(data);
   let poi = document.getElementById('poi');
   /* poi.innerHTML = '';
   if (data.preview) {
@@ -48,15 +48,14 @@ function onShowPOI(data) {
   poi.innerHTML += `<p><a target="_blank" href="${data.otm}">Locate the place on map</a></p>`; */
 }
 
-
-
 function loadList() {
   apiGet(
     'radius',
-    `radius=30000&limit=${pageLength}&offset=${offset}&lon=${lon}&lat=${lat}&rate=2&format=json`
+    `radius=30000&limit=${pageLength}&offset=${offset}&lon=${lon}&lat=${lat}&rate=2&format=json&kinds=museums,historic,natural,architecture`
   ).then(function (data) {
-    console.log(data);
-    data.forEach((item) => apiGet('xid/' + item.xid).then((info) => onShowPOI(info))); 
+    data.forEach((item) =>
+      apiGet('xid/' + item.xid).then((info) => onShowPOI(info))
+    );
   });
 }
 
@@ -66,7 +65,7 @@ function firstLoad() {
     `radius=30000&limit=${pageLength}&offset=${offset}&lon=${lon}&lat=${lat}&rate=2&format=count`
   ).then(function (data) {
     count = data.count;
-    offset = 0; 
+    offset = 0;
     loadList();
   });
 }
@@ -82,11 +81,10 @@ document
       if (data.status == 'OK' && data.country == 'IN') {
         document.getElementById('modal_dest').style.display = 'block';
         message = data.name;
-        lon = data.lon;
+        lon = data.lon;   
         lat = data.lat;
         firstLoad();
-      }
-      else {
+      } else {
         alert("Sorry, but we can't seem to find this place");
       }
       /* document.getElementById('info').innerHTML = `<p>${message}</p>`; */

@@ -81,30 +81,30 @@ self.addEventListener('activate', (event) => {
 
 var CACHE_NAME = 'my-site-cache-v2'; */
 const OFFLINE_VERSION = 1;
-const CACHE_NAME = "offline";
+const CACHE_NAME = 'offline';
 // Customize this with a different URL if needed.
 const OFFLINE_URL = 'offline.html';
 
-self.addEventListener("install", (event) => {
+self.addEventListener('install', (event) => {
   event.waitUntil(
     (async () => {
       const cache = await caches.open(CACHE_NAME);
       // Setting {cache: 'reload'} in the new request will ensure that the
       // response isn't fulfilled from the HTTP cache; i.e., it will be from
       // the network.
-      await cache.add(new Request(OFFLINE_URL, { cache: "reload" }));
+      await cache.add(new Request(OFFLINE_URL, { cache: 'reload' }));
     })()
   );
   // Force the waiting service worker to become the active service worker.
   self.skipWaiting();
 });
 
-self.addEventListener("activate", (event) => {
+self.addEventListener('activate', (event) => {
   event.waitUntil(
     (async () => {
       // Enable navigation preload if it's supported.
       // See https://developers.google.com/web/updates/2017/02/navigation-preload
-      if ("navigationPreload" in self.registration) {
+      if ('navigationPreload' in self.registration) {
         await self.registration.navigationPreload.enable();
       }
     })()
@@ -114,10 +114,10 @@ self.addEventListener("activate", (event) => {
   self.clients.claim();
 });
 
-self.addEventListener("fetch", (event) => {
+self.addEventListener('fetch', (event) => {
   // We only want to call event.respondWith() if this is a navigation request
   // for an HTML page.
-  if (event.request.mode === "navigate") {
+  if (event.request.mode === 'navigate') {
     event.respondWith(
       (async () => {
         try {
@@ -135,7 +135,10 @@ self.addEventListener("fetch", (event) => {
           // due to a network error.
           // If fetch() returns a valid HTTP response with a response code in
           // the 4xx or 5xx range, the catch() will NOT be called.
-          console.log("Fetch failed; returning offline page instead.", error);
+          console.log(
+            'Fetch failed; returning offline page instead.',
+            error
+          );
 
           const cache = await caches.open(CACHE_NAME);
           const cachedResponse = await cache.match(OFFLINE_URL);
