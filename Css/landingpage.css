@@ -1161,4 +1161,8 @@ hr {
   -webkit-animation: modalapp 0.7s ease-in;
           animation: modalapp 0.7s ease-in;
 }
+
+.poi_img {
+  height: 80vh;
+}
 /*# sourceMappingURL=landingpage.css.map */

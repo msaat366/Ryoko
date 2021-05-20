@@ -1,6 +1,6 @@
 const apiKey =
   '5ae2e3f221c38a28845f05b63583c00e0e8aff14104cbcba69d1f000';
-
+var data_s = [];
 function apiGet(method, query) {
   return new Promise(function (resolve, reject) {
     var otmAPI =  
@@ -31,59 +31,63 @@ let lat = 0;
 let count = 0;
 
 function onShowPOI(data) {
-  console.log(data);
-  let poi = document.getElementById('poi');
-  /* poi.innerHTML = '';
+  setTimeout(() => {
+    
+  }, 400);
+  
+  const poiImg1 = document.getElementById('poi-img-1');
+  const poiImg2 = document.getElementById('poi-img-2');
+  
   if (data.preview) {
-    poi.innerHTML += `<img src="${data.preview.source}" alt="Image Not Found">`;
+    data_s.push(data);
+    poiImg1.src = data_s[0].preview.source;
+    poiImg2.src = data_s[1].preview.source;
   } else {
-    poi.innerHTML += `<img src="" alt="Image Not Found">`;
+    console.log("not found");
   }
-  poi.innerHTML += data.wikipedia_extracts
-    ? data.wikipedia_extracts.html
-    : data.info
-    ? data.info.descr
-    : 'No description';
-
-  poi.innerHTML += `<p><a target="_blank" href="${data.otm}">Locate the place on map</a></p>`; */
 }
+
 
 function loadList() {
   apiGet(
     'radius',
     `radius=30000&limit=${pageLength}&offset=${offset}&lon=${lon}&lat=${lat}&rate=2&format=json&kinds=museums,historic,natural,architecture`
   ).then(function (data) {
-    data.forEach((item) =>
-      apiGet('xid/' + item.xid).then((info) => onShowPOI(info))
-    );
+    data.forEach((item) => {
+      apiGet('xid/' + item.xid).then((info) => {
+        onShowPOI(info)
+      })
+    });
   });
 }
 
-function firstLoad() {
+/* function firstLoad() {
   apiGet(
     'radius',
-    `radius=30000&limit=${pageLength}&offset=${offset}&lon=${lon}&lat=${lat}&rate=2&format=count`
+    `radius=30000&limit=${pageLength}&offset=${offset}&lon=${lon}&lat=${lat}&rate=2&format=count` 
   ).then(function (data) {
     count = data.count;
     offset = 0;
     loadList();
   });
-}
+} */
 
 document
   .getElementById('search-d')
   .addEventListener('click', function (event) {
     let name = document.getElementById('text-box').value;
     console.log(name);
+    data_s = []
     apiGet('geoname', 'name=' + name).then(function (data) {
       console.log(data);
-      let message = 'Name not found';
+      name.value = "";
+      //let message = 'Name not found';
       if (data.status == 'OK' && data.country == 'IN') {
         document.getElementById('modal_dest').style.display = 'block';
         message = data.name;
         lon = data.lon;   
         lat = data.lat;
-        firstLoad();
+        loadList();
       } else {
         alert("Sorry, but we can't seem to find this place");
       }
