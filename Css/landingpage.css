@@ -156,6 +156,8 @@ header {
 .explore-search button {
   background-color: #C4C4C4;
   border: none;
+  cursor: pointer;
+  padding-top: 0.5rem;
 }
 
 .explore-search button img {
@@ -776,6 +778,7 @@ footer {
   font-size: 5.6rem;
   -webkit-text-decoration: underline 0.8rem  #523160;
           text-decoration: underline 0.8rem  #523160;
+  text-transform: capitalize;
 }
 
 .brief {
@@ -833,10 +836,13 @@ footer {
       justify-content: space-around;
 }
 
+.poi-info div {
+  width: 90%;
+}
+
 .poi-info .poi-text {
   padding-top: 3rem;
-  font-size: 3.2rem;
-  line-height: 10rem;
+  font-size: 2.8rem;
 }
 
 .poi-info .poi-text h3 {
@@ -1163,6 +1169,7 @@ hr {
 }
 
 .poi_img {
-  height: 80vh;
+  height: 40vh;
+  border-radius: 8px;
 }
 /*# sourceMappingURL=landingpage.css.map */

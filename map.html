@@ -195,8 +195,6 @@
                 ? data.info.descr
                 : "No description";
 
-        poi.innerHTML += "<p><a target='_blank' href='"+ data.otm + "'>Show more at OpenTripMap</a></p>";
-
         new mapboxgl.Popup().setLngLat(lngLat)
             .setDOMContent(poi)
             .addTo(map);

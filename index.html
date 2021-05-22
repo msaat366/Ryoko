@@ -266,19 +266,11 @@
           <div>
             <img src="" alt="Not Found" class="poi_img" id="poi-img-1" />
             <div class="poi-text">
-              <h3>Gateway of India</h3>
-              <p>Location: Apollo Bandar, Colaba, Mumbai</p>
-              <p>Timings: 24×7; every day</p>
-              <p>Entry Fee: Free entry</p>
             </div>
           </div>
           <div>
             <img src="" alt=" Not Found" class='poi_img' id="poi-img-2" />
             <div class="poi-text">
-              <h3>Red Carpet Wax Museum</h3>
-              <p>Location: Amrut Nagar, Ghatkopar West, Mumbai</p>
-              <p>Timings: 09:45 am to 09:30 pm; every day</p>
-              <p>Entry Fee</p>
             </div>
           </div>
         </div>
@@ -712,7 +704,6 @@
     <script>
       /* Sign in using Google */
       function onSuccess(googleUser) {
-        console.log(googleUser);
         g_profile.style.display = 'inline-block';
         r_l_btn.style.display = 'none';
         modal.style.display = 'none';
@@ -722,7 +713,6 @@
           .getName()} <br> ${googleUser
           .getBasicProfile()
           .getEmail()}<br> <button onclick="signOut()">log out</button>`;
-        console.log(g_profile.display);
       }
       function onFailure(error) {
         console.log(error);
