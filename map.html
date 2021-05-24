@@ -204,7 +204,7 @@
         let coordinates = e.features[0].geometry.coordinates.slice();
         let id = e.features[0].properties.id;
         let name = e.features[0].properties.name;
-
+        console.log(coordinates);
         while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
             coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
         }

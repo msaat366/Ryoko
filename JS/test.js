@@ -61,13 +61,13 @@ function onShowPOI(data) {
 function loadList() {
   apiGet(
     'radius',
-    `radius=30000&limit=${pageLength}&offset=${offset}&lon=${lon}&lat=${lat}&rate=2&format=json&kinds=museums,historic,natural,architecture`
+    `radius=25000&limit=${pageLength}&offset=${offset}&lon=${lon}&lat=${lat}&rate=2&format=json&kinds=museums,historic,natural,architecture`
   ).then(function (data) {
     if (data.length == 0) {
       alert("No places found")
     }
     else {
-      alert('loading Please Wait');
+      alert('loading........');
     }
     data.forEach((item) => {
       apiGet('xid/' + item.xid).then((info) => {

@@ -108,3 +108,27 @@ function register() {
           }
         }
  */
+const kinds = ['water','ice','sky','mountain','forest','animals']
+function renderItem() {
+  let random_img = document.getElementsByClassName('random-img');
+  for (let i = 0; i < random_img.length; i++) {
+    setTimeout(() => {
+      
+    }, 300);
+    fetch(
+      `https://source.unsplash.com/800x600/?${
+        kinds[Math.floor(Math.random() * (5 - 0) + 0)]
+      }`
+    ).then((response) => {
+      console.log(response);
+      setTimeout(() => {},
+      200);
+      random_img[i].src = response.url;
+    });
+  }
+}
+
+
+setInterval(() => {
+  renderItem();
+}, 5000);

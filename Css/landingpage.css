@@ -79,16 +79,16 @@ header {
   padding: 1vw;
   font-size: 1.1vw;
   text-decoration: none;
-  border: 1px solid  #FF5200;
+  border: 1px solid #ff5200;
   border-radius: 8px;
-  color: #FF5200;
+  color: #ff5200;
   padding: auto 10rem;
   display: none;
   cursor: pointer;
 }
 
 .login:hover {
-  background-color: #FF5200;
+  background-color: #ff5200;
   color: white;
 }
 
@@ -144,7 +144,7 @@ header {
 }
 
 .explore-search input {
-  background-color: #C4C4C4;
+  background-color: #c4c4c4;
   width: 100%;
   font-size: 1.5vw;
   font-family: Playfair Display;
@@ -154,7 +154,7 @@ header {
 }
 
 .explore-search button {
-  background-color: #C4C4C4;
+  background-color: #c4c4c4;
   border: none;
   cursor: pointer;
   padding-top: 0.5rem;
@@ -164,7 +164,9 @@ header {
   height: 5vh;
 }
 
-.elem1, .elem2, .elem3 {
+.elem1,
+.elem2,
+.elem3 {
   position: absolute;
 }
 
@@ -195,12 +197,13 @@ header {
   color: white;
   font-family: mulish;
   font-weight: normal;
-  background-color: #FF5200;
+  background-color: #ff5200;
   text-align: center;
   text-decoration: none;
 }
 
-.explore, .illustration-1 {
+.explore,
+.illustration-1 {
   text-align: center;
   width: 50%;
 }
@@ -243,7 +246,7 @@ header {
 .view-all {
   cursor: pointer;
   font-family: inter;
-  color: #FF5200;
+  color: #ff5200;
   font-size: 1.2vw;
   font-weight: bold;
   text-decoration: none;
@@ -362,7 +365,7 @@ header {
   font-size: 1.1vw;
   line-height: 1.8vw;
   font-family: mulish;
-  color: #7D7987;
+  color: #7d7987;
   font-weight: lighter;
   padding-bottom: 1.3vw;
 }
@@ -516,7 +519,7 @@ header {
 }
 
 .blog-p {
-  color: #7D7987;
+  color: #7d7987;
   font-family: inter;
   font-weight: lighter;
   font-size: 1vw;
@@ -529,7 +532,7 @@ header {
 }
 
 .read-more {
-  color: #FF5200;
+  color: #ff5200;
   font-size: 1.1vw;
   font-family: inter;
   text-decoration: none;
@@ -691,7 +694,7 @@ footer {
 .register-login-section form input {
   border-style: none;
   border-radius: 8px;
-  background-color: #F2EEEE;
+  background-color: #f2eeee;
   margin: 1vw;
   padding: 1vw;
   font-family: 'Montserrat', sans-serif;
@@ -758,7 +761,7 @@ footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #1877F2;
+  background-color: #1877f2;
   border-radius: 30px;
   z-index: -2;
   -webkit-transition: 0.5s;
@@ -776,8 +779,8 @@ footer {
 .hl-name {
   text-align: center;
   font-size: 5.6rem;
-  -webkit-text-decoration: underline 0.8rem  #523160;
-          text-decoration: underline 0.8rem  #523160;
+  -webkit-text-decoration: underline 0.8rem #523160;
+          text-decoration: underline 0.8rem #523160;
   text-transform: capitalize;
 }
 
@@ -906,7 +909,7 @@ hr {
 }
 
 #acc .account::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 100%;
   left: 40%;
@@ -1036,7 +1039,7 @@ hr {
 }
 
 .About-page hr {
-  border: 1px solid #DAA520;
+  border: 1px solid #daa520;
 }
 
 .about-us h1 {
@@ -1047,7 +1050,7 @@ hr {
 }
 
 .about-us .au-align {
-  color: #E4E0E0;
+  color: #e4e0e0;
   padding: 10rem 34rem;
 }
 
@@ -1082,7 +1085,7 @@ hr {
 }
 
 .au-color-1 {
-  color: #DAA520;
+  color: #daa520;
 }
 
 .our-story {
@@ -1100,7 +1103,7 @@ hr {
 }
 
 .our-story p {
-  color: #E5E5E5;
+  color: #e5e5e5;
   line-height: 4rem;
   font-weight: lighter;
   padding: 3rem 1rem;
@@ -1118,7 +1121,7 @@ hr {
 
 .our-values .values-4 {
   padding: 5rem;
-  color: #E5E5E5;
+  color: #e5e5e5;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1169,7 +1172,7 @@ hr {
 }
 
 .poi_img {
-  height: 40vh;
+  height: 45vh;
   border-radius: 8px;
 }
 /*# sourceMappingURL=landingpage.css.map */
