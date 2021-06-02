@@ -23,14 +23,14 @@ function apiGet(method, query) {
   });
 }
 
-const pageLength = 5;
+const pageLength = 10;
 
 let offset = 0;
 let lon = 0;
 let lat = 0;
 
-
-function onShowPOI(data) {
+ 
+async function onShowPOI(data) {
   setTimeout(() => {
     
   }, 400);
@@ -39,27 +39,28 @@ function onShowPOI(data) {
   const poiImg2 = document.getElementById('poi-img-2');
   const poiText = document.getElementsByClassName('poi-text');
 
-  console.log(poiText);
+ 
   /* poiText1.innerHTML */
   
-  if (data.preview) {
-     document.getElementById('modal_dest').style.display = 'block';
+  if (data.preview && wikipedia_extracts.text) {
+    document.getElementById('modal_dest').style.display = 'block';
     data_s.push(data);
     poiImg1.src = data_s[0].preview.source;
     poiImg2.src = data_s[1].preview.source;
-    poiText[0].innerHTML = "<h3>" + data_s[0].name + "</h3>"
-    poiText[0].innerHTML += '<p>' + data_s[0].wikipedia_extracts.text + '</p>';
-    poiText[1].innerHTML = "<h3>" + data_s[1].name + "</h3>"
-    poiText[1].innerHTML += '<p>' + data_s[1].wikipedia_extracts.text + '</p>';
-    
+    poiText[0].innerHTML = '<h3>' + data_s[0].name + '</h3>';
+    poiText[0].innerHTML +=
+      '<p>' + data_s[0].wikipedia_extracts.text + '</p>';
+    poiText[1].innerHTML = '<h3>' + data_s[1].name + '</h3>';
+    poiText[1].innerHTML +=
+      '<p>' + data_s[1].wikipedia_extracts.text + '</p>';
   } else {
-    console.log("not found");
+    console.log('not found');
   }
 }
 
 
-function loadList() {
-  apiGet(
+async function loadList() {
+ await apiGet(
     'radius',
     `radius=25000&limit=${pageLength}&offset=${offset}&lon=${lon}&lat=${lat}&rate=2&format=json&kinds=museums,historic,natural,architecture`
   ).then(function (data) {
@@ -88,9 +89,8 @@ function loadList() {
   });
 } */
 
-document
-  .getElementById('search-d')
-  .addEventListener('click', function (event) {
+function getcityinfo() {
+  console.log("event started");
     var name = document.getElementById('text-box').value;
     document.getElementsByClassName('hl-name')[0].innerHTML = name;
     data_s = [];
@@ -107,7 +107,6 @@ document
         alert("Sorry, but we can't seem to find this place");
       }
     });
-    event.preventDefault();
-  });
+  }
 
 

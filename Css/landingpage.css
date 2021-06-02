@@ -253,7 +253,7 @@ header {
 }
 
 .view-all img {
-  width: 8%;
+  width: 0.8vh;
   -webkit-animation: anime 1s infinite;
           animation: anime 1s infinite;
 }
@@ -853,7 +853,7 @@ footer {
 }
 
 hr {
-  margin: 8rem;
+  margin: 8rem 5rem;
   border: 1px solid black;
   text-align: center;
 }
