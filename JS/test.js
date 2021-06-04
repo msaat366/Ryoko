@@ -30,7 +30,7 @@ let lon = 0;
 let lat = 0;
 
  
-async function onShowPOI(data) {
+ function onShowPOI(data) {
   setTimeout(() => {
     
   }, 400);
@@ -42,17 +42,19 @@ async function onShowPOI(data) {
  
   /* poiText1.innerHTML */
   
-  if (data.preview && wikipedia_extracts.text) {
+  if (data.preview) {
     document.getElementById('modal_dest').style.display = 'block';
+    document.getElementsByClassName('snap-line')[0].style.display =
+      'none';
     data_s.push(data);
     poiImg1.src = data_s[0].preview.source;
     poiImg2.src = data_s[1].preview.source;
     poiText[0].innerHTML = '<h3>' + data_s[0].name + '</h3>';
     poiText[0].innerHTML +=
-      '<p>' + data_s[0].wikipedia_extracts.text + '</p>';
+    '<p>' + data_s[0].wikipedia_extracts.text + '</p>';
     poiText[1].innerHTML = '<h3>' + data_s[1].name + '</h3>';
     poiText[1].innerHTML +=
-      '<p>' + data_s[1].wikipedia_extracts.text + '</p>';
+    '<p>' + data_s[1].wikipedia_extracts.text + '</p>';
   } else {
     console.log('not found');
   }
@@ -71,6 +73,7 @@ async function loadList() {
       alert('loading........');
     }
     data.forEach((item) => {
+       setTimeout(() => {}, 400);
       apiGet('xid/' + item.xid).then((info) => {
         onShowPOI(info)
       })
@@ -89,17 +92,15 @@ async function loadList() {
   });
 } */
 
-function getcityinfo() {
+async function getcityinfo(name) {
   console.log("event started");
-    var name = document.getElementById('text-box').value;
-    document.getElementsByClassName('hl-name')[0].innerHTML = name;
+    //document.getElementsByClassName('hl-name')[0].innerHTML = name;
     data_s = [];
-    apiGet('geoname', 'name=' + name).then(function (data) {
+  await  apiGet('geoname', 'name=' + name).then(function (data) {
       console.log(data);  
-      name.value = "";
       if (data.status == 'OK' && data.country == 'IN') {
-        
         message = data.name;
+        document.getElementsByClassName('hl-name')[0].innerHTML = message;
         lon = data.lon;   
         lat = data.lat;
         loadList();
@@ -109,4 +110,18 @@ function getcityinfo() {
     });
   }
 
+  var loc_click = document.querySelectorAll('.featured-location a');
+  var search_name = document.querySelectorAll(
+    '.featured-location a p'
+  );
+  for (let i = 0; i < loc_click.length; i++) {
+    loc_click[i].addEventListener('click', () => {
+     getcityinfo(search_name[i].innerHTML);
+    });
+}
+  
+  document.getElementById('search-d').addEventListener('click', () => {
+  var name = document.getElementById('text-box').value;
+    getcityinfo(name);
+})
 

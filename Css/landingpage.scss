@@ -110,7 +110,7 @@ header {
   input {
     background-color: #c4c4c4;
     width: 100%;
-    font-size: 1.5vw;
+    font-size: 1.7vw;
     font-family: Playfair Display;
     font-weight: bold;
     border: none;
@@ -227,6 +227,7 @@ header {
   display: flex;
   justify-content: space-between;
   a {
+    cursor: pointer;
     width: 22%;
   }
 }
@@ -679,7 +680,28 @@ hr {
   }
   .h-i-t {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    .h_dis{
+      display: flex;  
+      padding: 3rem;
+      width: 60%;
+      font-size: 3.5rem;
+      img{
+        margin-right: 4rem;
+      }
+      th{
+        display: grid;
+        justify-items: baseline;
+        a{
+          color: black;
+          &:hover{
+            color: #1877f2;
+          }
+        }
+      }
+    }
   }
 }
 

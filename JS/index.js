@@ -16,7 +16,10 @@ close_modal.addEventListener('click', () => {
 });
 
 document.getElementById('close_d').addEventListener('click', () => {
+  document.querySelectorAll('.h_dis').remove;
   document.getElementById('modal_dest').style.display = 'none';
+  document.getElementsByClassName('snap-line')[0].style.display =
+    'block';
 });
 
 firebase.auth().onAuthStateChanged((user) => {
@@ -129,7 +132,6 @@ const kinds = ['water','ice','sky','mountain','forest','animals']
 }
 
 
-/*  setInterval(() => {
+ /* setInterval(() => {
    renderItem();
-}, 8000);
- */
+}, 8000); */

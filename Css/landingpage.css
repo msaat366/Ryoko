@@ -146,7 +146,7 @@ header {
 .explore-search input {
   background-color: #c4c4c4;
   width: 100%;
-  font-size: 1.5vw;
+  font-size: 1.7vw;
   font-family: Playfair Display;
   font-weight: bold;
   border: none;
@@ -298,6 +298,7 @@ header {
 }
 
 .featured-location a {
+  cursor: pointer;
   width: 22%;
 }
 
@@ -872,9 +873,43 @@ hr {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.hungry-info .h-i-t .h_dis {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 3rem;
+  width: 60%;
+  font-size: 3.5rem;
+}
+
+.hungry-info .h-i-t .h_dis img {
+  margin-right: 4rem;
+}
+
+.hungry-info .h-i-t .h_dis th {
+  display: -ms-grid;
+  display: grid;
+  justify-items: baseline;
+}
+
+.hungry-info .h-i-t .h_dis th a {
+  color: black;
+}
+
+.hungry-info .h-i-t .h_dis th a:hover {
+  color: #1877f2;
 }
 
 #acc {

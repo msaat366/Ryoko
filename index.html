@@ -278,14 +278,8 @@
       <hr />
       <section class="hungry-info">
         <h1>Hungry? we got you covered</h1>
-        <div class="h-i-t">
-          <img src="" alt="The Table" />
-          <th>1.The Table</th>
-          <td>
-            This romantic, bi-level, upscale eatery is a pioneer of
-            Mumbai’s farm-to-table revolution, adopting international
-            culinary trends and applying them to a local context.
-          </td>
+        <div class="h-i-t" id="hotel-info">
+
         </div>
       </section>
     </section>
@@ -335,7 +329,7 @@
               id="text-box"
               autofocus
             />
-            <button type="submit" id="search-d" onclick="getcityinfo();">
+            <button type="submit" id="search-d">
               <img
                 src="./Assets/Landing Page/Google Web Search.svg"
                 alt="Search"
@@ -383,7 +377,7 @@
           />
         </div>
         <div class="featured-location">
-          <a href="./mumbai.html">
+          <a>
             <img
               class="location"
               src="./Assets/featured-destination/mumbai.jpg"
@@ -391,7 +385,7 @@
             />
             <p class="location-name">Mumbai</p>
           </a>
-          <a href="">
+          <a >
             <img
               class="location"
               src="./Assets/featured-destination/Pune.jpg"
@@ -399,7 +393,7 @@
             />
             <p class="location-name">Pune</p>
           </a>
-          <a href="">
+          <a >
             <img
               class="location"
               src="./Assets/featured-destination/konkan.jpg"
@@ -407,7 +401,7 @@
             />
             <p class="location-name">Konkan</p>
           </a>
-          <a href="">
+          <a >
             <img
               class="location"
               src="./Assets/featured-destination/Aurangabad.jpg"
@@ -452,7 +446,7 @@
               alt=""
               class="elem2-3"
             />
-            <a href="" class="explore-button">About us</a>
+            <a href="./about.html" class="explore-button">About us</a>
           </div>
         </div>
       </section>
@@ -632,8 +626,8 @@
       const auth = firebase.auth();
     </script>
     <script src="./JS/index.js"></script>
-    <script src="./JS/test.js"></script>
     <script src="./JS/hotel.js"></script>
+    <script src="./JS/test.js"></script>
     <script>
       window.fbAsyncInit = function () {
         FB.init({
