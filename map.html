@@ -220,9 +220,11 @@
     });
 
     map.on("mouseenter", "opentripmap-pois", function (e) {
+        console.log(e);
         map.getCanvas().style.cursor = "pointer";
         
         let coordinates = e.features[0].geometry.coordinates.slice();
+        console.log(coordinates);
         let id = e.features[0].properties.id;
         let name = e.features[0].properties.name;
 

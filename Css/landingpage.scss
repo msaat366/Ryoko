@@ -13,6 +13,10 @@
   font-size: 66.7%;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 header {
   padding: 1vw;
   position: fixed;
@@ -241,6 +245,9 @@ header {
   padding: 1vw;
   font-family: Playfair Display;
   text-align: center;
+  &:hover{
+    text-decoration: underline;
+  }
 }
 
 .elem2-2 {
@@ -499,7 +506,8 @@ footer {
   justify-content: center;
   flex-wrap: wrap;
   align-content: space-between;
-  a {
+  p {
+    cursor: pointer;
     display: flex;
     flex-basis: 21%;
     flex-direction: column;
@@ -757,7 +765,7 @@ hr {
   background-color: rgb(255, 255, 255); /* Black w/ opacity */
   z-index: 99;
   transition: display 0.5s;
-  animation: modalapp 0.3s ease-in;
+  animation: modalapp 0.3s ease-in alternate;
 }
 
 @keyframes modalapp {
@@ -929,10 +937,48 @@ hr {
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(255, 255, 255); /* Fallback color */
   background-color: rgb(255, 255, 255); /* Black w/ opacity */
-  z-index: 99;
+  z-index: 999;
   transition: display 0.5s;
-  animation: modalapp 0.7s ease-in;
+  animation: modalapp 0.7s ease-in alternate;
 }
+
+#modal_fdest{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(255, 255, 255); /* Fallback color */
+  background-color: rgb(255, 255, 255); /* Black w/ opacity */
+  z-index: 99;
+  transition: display 0.4s;
+  animation:  mdest 0.5s ease-in-out alternate;
+  overflow: hidden;
+  iframe{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+
+@keyframes mdest {
+  from {
+    transform: scale(0%);
+  }
+  to {
+    transform: scale(100%);
+  }
+}
+
+.random-img{
+  display: block;
+  transition: display 0.3s linear;
+}
+
+
 
 .poi_img {
   height: 45vh;

@@ -1,7 +1,7 @@
 const apiKey =
   '5ae2e3f221c38a28845f05b63583c00e0e8aff14104cbcba69d1f000';
 var data_s = [];
-function apiGet(method, query) {
+ function apiGet(method, query) {
   return new Promise(function (resolve, reject) {
     var otmAPI =  
       'https://api.opentripmap.com/0.1/en/places/' +

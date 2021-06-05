@@ -6,21 +6,40 @@ const email_name = document.getElementById('email-name');
 const g_profile = document.getElementById('g-profile');
 const g_img = document.querySelector('.g-profile img');
 const g_info = document.getElementById('g-info');
+document.getElementsByClassName('snap-line')[0].style.display = 'block';
 
 r_l_btn.addEventListener('click', () => {
   modal.style.display = 'block';
+   document.getElementsByClassName('snap-line')[0].style.display =
+     'none';
 });
 
 close_modal.addEventListener('click', () => {
   modal.style.display = 'none';
+   document.getElementsByClassName('snap-line')[0].style.display =
+     'block';
 });
 
 document.getElementById('close_d').addEventListener('click', () => {
-  document.querySelectorAll('.h_dis').remove;
+  document.querySelectorAll('.h_dis').forEach((a) => {
+    a.remove();
+  });
   document.getElementById('modal_dest').style.display = 'none';
   document.getElementsByClassName('snap-line')[0].style.display =
     'block';
 });
+
+document.getElementById('close_fdest').addEventListener('click', () => {
+  document.getElementById('modal_fdest').style.display = 'none';
+  document.getElementsByClassName('snap-line')[0].style.display =
+    'block';
+});
+
+function fdest() {
+  document.getElementById('modal_fdest').style.display = 'block';
+   document.getElementsByClassName('snap-line')[0].style.display =
+     'none';
+}
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
@@ -119,7 +138,7 @@ const kinds = ['water','ice','sky','mountain','forest','animals']
       
     }, 500);
    fetch(
-      `https://source.unsplash.com/800x600/?${
+      `https://source.unsplash.com/400x400/?${
         kinds[Math.floor(Math.random() * (5 - 0) + 0)]
       }`
     ).then((response) => {
@@ -131,7 +150,8 @@ const kinds = ['water','ice','sky','mountain','forest','animals']
   }
 }
 
+setInterval(() => {
+    if (document.getElementsByClassName('snap-line')[0].style.display == 'block') 
+    renderItem();
+  }, 8000);
 
- /* setInterval(() => {
-   renderItem();
-}, 8000); */

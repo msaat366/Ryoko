@@ -1,6 +1,6 @@
 
-function hotelinfo(name) {
-  fetch(
+async function hotelinfo(name) {
+ await fetch(
     `https://hotels4.p.rapidapi.com/locations/search?query=${name},Maharashtra&locale=en_US`,
     {
       method: 'GET',
@@ -42,7 +42,12 @@ function hotelinfo(name) {
       )
         .then((response) => response.json())
         .then((response) => {
-          alert('Loading hotel data.......');
+          if (
+            document.getElementsByClassName('snap-line')[0].style
+              .display == 'none'
+          ) {
+            alert('Loading hotel data.......');
+          }
           console.log(response);
           //console.log(response.data.body.searchResults.results);
           var hotelName = new Array();
@@ -73,6 +78,14 @@ function hotelinfo(name) {
             newdiv.appendChild(th);
             th.appendChild(locate);
           }
+          if (
+            document.getElementsByClassName('snap-line')[0].style
+              .display == 'block'
+          ) {
+            document.querySelectorAll('.h_dis').forEach((a) => {
+              a.remove();
+            });
+          }
         });
     })
     .catch((err) => {
@@ -81,14 +94,15 @@ function hotelinfo(name) {
 }
 var loc_click = document.querySelectorAll('.featured-location a');
 var search_name = document.querySelectorAll('.featured-location a p');
-for (let i = 0; i < loc_click.length; i++){
+
+for (let i = 0; i < loc_click.length; i++) {
   loc_click[i].addEventListener('click', () => {
-    hotelinfo(search_name[i].innerHTML)
-  }) 
+      hotelinfo(search_name[i].innerHTML);
+  });
 }
 
 document.getElementById('search-d').addEventListener('click', () => {
-  var name = document.getElementById('text-box').value;
-  hotelinfo(name);
+  var name = document.getElementById('text-box').value;  
+    hotelinfo(name);
 }
 )

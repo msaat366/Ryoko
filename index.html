@@ -283,6 +283,10 @@
         </div>
       </section>
     </section>
+    <div id="modal_fdest">
+       <span class="close" id="close_fdest">&times;</span>
+      <iframe src="./featured-destination.html" frameborder="0" ></iframe>
+    </div>
     <header>
       <nav class="navbar">
         <div class="navbar-left">
@@ -297,11 +301,11 @@
         </div>
         <div class="navbar-right">
           <a href="./index.html" class="nav-buttons">Home</a>
-          <a href="./featured-destination.html" class="nav-buttons"
+          <a class="nav-buttons" onclick="fdest();"
             >Destination</a
           >
           <a href="./about.html" class="nav-buttons">About</a>
-          <a href="#" class="nav-buttons">Blogs</a>
+          <a href="#s-6" class="nav-buttons">Blogs</a>
           <a class="login" id="r_l">Register/Login</a>
           <a class="nav-buttons" id="acc"
             >Account
@@ -366,7 +370,7 @@
       <section class="section-2">
         <div class="featured-section">
           <h2 class="featured-name">Featured destinations</h2>
-          <a href="./featured-destination.html" class="view-all"
+          <a class="view-all" onclick="fdest();"
             >View all
             <img src="./Assets/Landing Page/view all.svg" alt=""
           /></a>
@@ -488,7 +492,7 @@
           <img src="./Assets/Landing Page/Rectangle 4.jpg" alt="" class="random-img" />
         </div>
       </section>
-      <section class="section-6">
+      <section class="section-6" id="s-6">
         <img
           src="./Assets/Landing Page/element3.svg"
           alt=""
