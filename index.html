@@ -704,6 +704,8 @@
     <script>
       /* Sign in using Google */
       function onSuccess(googleUser) {
+        document.getElementsByClassName('snap-line')[0].style.display =
+        'block';
         g_profile.style.display = 'inline-block';
         r_l_btn.style.display = 'none';
         modal.style.display = 'none';

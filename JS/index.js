@@ -95,6 +95,8 @@ signin.addEventListener('submit', (e) => {
     .then((userCredential) => {
       var user = userCredential.user;
       console.log(user);
+      document.getElementsByClassName('snap-line')[0].style.display =
+        'block';
       modal.style.display = 'none';
     })
     .catch((error) => {
@@ -150,8 +152,8 @@ const kinds = ['water','ice','sky','mountain','forest','animals']
   }
 }
 
-setInterval(() => {
+/* setInterval(() => {
     if (document.getElementsByClassName('snap-line')[0].style.display == 'block') 
     renderItem();
-  }, 8000);
+  }, 8000); */
 
