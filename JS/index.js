@@ -132,7 +132,7 @@ function register() {
           }
         }
  */
-const kinds = ['water','ice','sky','mountain','forest','animals']
+const kinds = ['water','ice','sky','mountain','forest','animals','buildings', 'nature']
  function renderItem() {
   let random_img = document.getElementsByClassName('random-img');
   for (let i = 0; i < random_img.length; i++) {
@@ -141,7 +141,7 @@ const kinds = ['water','ice','sky','mountain','forest','animals']
     }, 500);
    fetch(
       `https://source.unsplash.com/400x400/?${
-        kinds[Math.floor(Math.random() * (5 - 0) + 0)]
+        kinds[Math.floor(Math.random() * (7 - 0) + 0)]
       }`
     ).then((response) => {
       console.log(response);
@@ -152,8 +152,8 @@ const kinds = ['water','ice','sky','mountain','forest','animals']
   }
 }
 
-/* setInterval(() => {
+setInterval(() => {
     if (document.getElementsByClassName('snap-line')[0].style.display == 'block') 
     renderItem();
-  }, 8000); */
+  }, 8000);
 
