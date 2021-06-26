@@ -659,14 +659,16 @@ footer {
 .poi-info {
   margin: 10rem;
   margin-top: 20rem;
-  display: flex;
-  justify-content: space-around;
-  div {
-    width: 90%;
+  display: -webkit-box;
+  overflow-x: scroll;
+  .alignment-poi{
+    width: 55%;
+
   }
   .poi-text {
     padding-top: 3rem;
     font-size: 2.8rem;
+    width: 90%;
     h3 {
       font-size: 3.3rem;
     }

@@ -35,8 +35,7 @@ let lat = 0;
     
   }, 400);
   
-  const poiImg1 = document.getElementById('poi-img-1');
-  const poiImg2 = document.getElementById('poi-img-2');
+  const poiImg = document.getElementsByClassName('poi_img');
   const poiText = document.getElementsByClassName('poi-text');
 
  
@@ -46,15 +45,15 @@ let lat = 0;
     document.getElementById('modal_dest').style.display = 'block';
     document.getElementsByClassName('snap-line')[0].style.display =
       'none';
-    data_s.push(data);
-    poiImg1.src = data_s[0].preview.source;
-    poiImg2.src = data_s[1].preview.source;
-    poiText[0].innerHTML = '<h3>' + data_s[0].name + '</h3>';
-    poiText[0].innerHTML +=
-    '<p>' + data_s[0].wikipedia_extracts.text + '</p>';
-    poiText[1].innerHTML = '<h3>' + data_s[1].name + '</h3>';
-    poiText[1].innerHTML +=
-    '<p>' + data_s[1].wikipedia_extracts.text + '</p>';
+      data_s.push(data);
+      for (let i = 0; i < 4 ; i++){
+      poiImg[i].src = data_s[i].preview.source;
+      poiText[i].innerHTML = '<h3>' + data_s[i].name + '</h3>';
+      poiText[i].innerHTML +=
+          '<p>' + data_s[i].wikipedia_extracts.text + '</p>';
+        poiText[i].innerHTML +=
+          `<a href="https://www.google.com/maps/search/${data_s[i].name},${ data_s[i].address.county? data_s[i].address.county: data_s[i].address.city}" target="_blank" rel="noopener noreferrer">Locate this on map</a>`;
+    }
   } else {
     console.log('not found');
   }
@@ -64,7 +63,7 @@ let lat = 0;
 async function loadList() {
  await apiGet(
     'radius',
-    `radius=25000&limit=${pageLength}&offset=${offset}&lon=${lon}&lat=${lat}&rate=2&format=json&kinds=cultural,other_temples  ,historic,natural,architecture`
+    `radius=25000&limit=${pageLength}&offset=${offset}&lon=${lon}&lat=${lat}&rate=2&format=json&kinds=cultural,other_temples,historic,natural,architecture`
   ).then(function (data) {
     if (data.length == 0) {
       alert("No places found")

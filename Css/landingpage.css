@@ -843,19 +843,17 @@ footer {
   margin: 10rem;
   margin-top: 20rem;
   display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  overflow-x: scroll;
 }
 
-.poi-info div {
-  width: 90%;
+.poi-info .alignment-poi {
+  width: 55%;
 }
 
 .poi-info .poi-text {
   padding-top: 3rem;
   font-size: 2.8rem;
+  width: 90%;
 }
 
 .poi-info .poi-text h3 {
