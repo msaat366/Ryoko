@@ -30,13 +30,13 @@ let lon = 0;
 let lat = 0;
 
  
+const poiImg = document.getElementsByClassName('poi_img');
+const poiText = document.getElementsByClassName('poi-text');
  function onShowPOI(data) {
   setTimeout(() => {
     
   }, 400);
   
-  const poiImg = document.getElementsByClassName('poi_img');
-  const poiText = document.getElementsByClassName('poi-text');
 
  
   /* poiText1.innerHTML */
@@ -93,6 +93,10 @@ async function loadList() {
 
 async function getcityinfo(name) {
   console.log("event started");
+  for (let i = 0; i < 4; i++){
+    poiImg[i].src = '';
+    poiText[i].innerHTML ='';
+  }
     //document.getElementsByClassName('hl-name')[0].innerHTML = name;
     data_s = [];
   await  apiGet('geoname', 'name=' + name).then(function (data) {

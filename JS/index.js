@@ -152,8 +152,8 @@ const kinds = ['water','ice','sky','mountain','forest','animals','buildings','na
   }
 }
 
-/* setInterval(() => {
+setInterval(() => {
     if (document.getElementsByClassName('snap-line')[0].style.display == 'block') 
     renderItem();
   }, 8000);
- */
+
