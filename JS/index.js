@@ -147,13 +147,13 @@ const kinds = ['water','ice','sky','mountain','forest','animals']
       console.log(response);
       setTimeout(() => {},
       200);
-      random_img[i].src = `https://49dfkmlx.tinifycdn.com/${response.url}`;
+      random_img[i].src = response.url;
     });
   }
 }
 
-setInterval(() => {
+/* setInterval(() => {
     if (document.getElementsByClassName('snap-line')[0].style.display == 'block') 
     renderItem();
-  }, 8000);
+  }, 8000); */
 
