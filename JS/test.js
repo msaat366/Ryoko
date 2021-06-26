@@ -64,7 +64,7 @@ let lat = 0;
 async function loadList() {
  await apiGet(
     'radius',
-    `radius=25000&limit=${pageLength}&offset=${offset}&lon=${lon}&lat=${lat}&rate=2&format=json&kinds=cultural,other_temples,historic,natural,architecture`
+    `radius=25000&limit=${pageLength}&offset=${offset}&lon=${lon}&lat=${lat}&rate=2&format=json&kinds=cultural,other_temples  ,historic,natural,architecture`
   ).then(function (data) {
     if (data.length == 0) {
       alert("No places found")
