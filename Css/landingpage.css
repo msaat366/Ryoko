@@ -734,6 +734,9 @@ footer {
 
 .flex .login-s {
   position: absolute;
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
   visibility: hidden;
   right: 0%;
   width: 100%;

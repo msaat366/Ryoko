@@ -562,6 +562,8 @@ footer {
   display: flex;
   .login-s {
     position: absolute;
+    display: grid;
+    justify-items: center;
     visibility: hidden;
     right: 0%;
     width: 100%;
